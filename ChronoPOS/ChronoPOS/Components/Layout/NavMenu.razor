@@ -1,27 +1,117 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">ChronoPOS</a>
+﻿<div class="nav-container">
+    <div class="logo-box">
+        <span></span>
+        <span></span>
+        <span>ChronoPOS</span>
+    </div>
+    <div class="nav-menu-container">
+
+        @foreach (var menuitem in MenuList)
+        {
+            <div class="nav-menu-item-container">
+                @if (menuitem.SubMenu.Any())
+                {
+                    @* var isExpend = ExpendSubMenu.ContainsKey(menuitem.MainMenu); *@
+                    <div @onclick="()=>ToggleSubMenu(menuitem.MainMenu)" class="nav-mainmenu-text pointer">
+                        @menuitem.MainMenu 
+                        @* <span class="nav-expend @(isExpend ? "nav-expended-ind":"")">
+                            @SVGService.CarvonDown(12, 12)
+                        </span> *@
+                    </div>
+                    foreach (var menu in menuitem.SubMenu)
+                    {
+                        @* @(isExpend ? "" : "nav-sub-hide") *@
+                        <div @onclick="()=>OnSelectMenu(menu)" class="nav-menu-item @(menu == SelectedMenu ? "nav-selected-item":"")">
+                            <div>@SVGService.NavManuIcons(23, 23, menu)</div>
+                            <div>@menu</div>
+                        </div>
+                    } 
+                }
+            </div>
+        }
+        <div>
+            <ChronoPOS.Components.Common.ColorPicker />
+        </div>
     </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+@code{
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    private List<NavMenuItem> MenuList = new List<NavMenuItem>()
+    {
+        new NavMenuItem()
+        {
+            MainMenu = MenuSection.Service,
+            SubMenu = new List<string>()
+            {
+                MenuSection.Dashboard,
+                MenuSection.Items,
+                MenuSection.Transaction,
+                MenuSection.Order,
+                MenuSection.Booking,
+            }
+        },
+        new NavMenuItem()
+        {
+            MainMenu = MenuSection.Management,
+            SubMenu = new List<string>()
+            {
+                MenuSection.Waiters,
+                MenuSection.Report,
+            }
+        },
+        new NavMenuItem()
+        {
+            MainMenu = MenuSection.Setting,
+            SubMenu = new List<string>()
+            {
+                MenuSection.Devices,
+                MenuSection.Permission,
+                MenuSection.Printers,
+            }
+        }
+    };
+
+    private Dictionary<string, bool> ExpendSubMenu = new Dictionary<string, bool>()
+    {
+        {MenuSection.Service, true},
+        {MenuSection.Management, true},
+        {MenuSection.Setting, true},
+    };
+
+    private string SelectedMenu = MenuSection.Dashboard;
+
+    private void OnSelectMenu(string menu)
+    {
+        SelectedMenu = menu;
+        //if (SelectedMenu != MenuSection.Room) return;
+        if(SelectedMenu == MenuSection.Dashboard)
+        {
+            Nav.NavigateTo("/");
+            return;
+        }
+        Nav.NavigateTo(SelectedMenu);
+
+    }
+
+    private void ToggleSubMenu(string id)
+    {
+        if (ExpendSubMenu.ContainsKey(id))
+        {
+            ExpendSubMenu.Remove(id);
+        }
+        else
+        {
+            ExpendSubMenu.Add(id, true);
+        }
+    }
+
+}
+
+
+                        @* <div class="nav-menu-bottom-section">
+            <div class="nav-menu-item">
+                <div>@SVGService.SettingIcon(23, 23)</div>
+                <div>Setting</div>
+            </div>
+        </div> *@

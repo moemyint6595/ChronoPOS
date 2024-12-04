@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Shared.Services;
 
 namespace ChronoPOS
 {
@@ -15,9 +16,13 @@ namespace ChronoPOS
                 });
 
             builder.Services.AddMauiBlazorWebView();
-
+            builder.Services.AddScoped<GlobalVariables>();
+            builder.Services.AddScoped<CommonFunctions>();
+            builder.Services.AddScoped<LocalStorageService>();
+            builder.Services.AddScoped<NotifierService>();
+            builder.Services.AddScoped<LanguageService>();
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
 
