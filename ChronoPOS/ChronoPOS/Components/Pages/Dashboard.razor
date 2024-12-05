@@ -161,6 +161,7 @@
 
     private async Task InitializeCharts()
     {
+        await Task.Delay(200);
         await JSRuntime.InvokeVoidAsync("ChartJSFunctions.DoughnutChart", "chart-area", chartBcolor);
         await JSRuntime.InvokeVoidAsync("ChartJSFunctions.LineChart", "line-area", chartBcolor);
     }
@@ -169,13 +170,13 @@
     {
         if (ON == NotifierObjectName.ThemeUpdate && AN == NotifierActionName.ThemeUpdateAction && data is not null)
         {
-            isFinished = false;
-            StateHasChanged();
-            isFinished = true;
-            StateHasChanged();
-            await Task.Delay(100);
-            chartBcolor = data.ToString() ?? "#FFFFFF";
-            await InitializeCharts();
+            // isFinished = false;
+            // StateHasChanged();
+            // isFinished = true;
+            // StateHasChanged();
+            // await Task.Delay(100);
+            // chartBcolor = data.ToString() ?? "#FFFFFF";
+            // await InitializeCharts();
         }
     }
 

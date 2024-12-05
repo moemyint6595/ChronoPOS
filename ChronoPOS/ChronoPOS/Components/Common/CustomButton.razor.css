@@ -1,0 +1,14 @@
+﻿.custbtn-default-css {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background : var(--core-color);
+    color : white;
+}
+.custbtn-default-wrapper-css{
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    padding : 5px 10px;
+    gap : 10px;
+}

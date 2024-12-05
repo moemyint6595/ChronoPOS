@@ -23,7 +23,7 @@ namespace Shared.Services
         public const string Dashboard = "Dashboard";
         public const string Room = "Room";
         public const string Items = "Items";
-        public const string Transaction = "Transaction";
+        public const string Voucher = "Voucher";
         public const string Order = "Order";
         public const string Booking = "Booking";
 
