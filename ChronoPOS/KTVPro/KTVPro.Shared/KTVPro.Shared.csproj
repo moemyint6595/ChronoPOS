@@ -18,13 +18,4 @@
     <ProjectReference Include="..\..\Shared\Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="KMS_APIAccess">
-      <HintPath>..\..\Shared\References\KMS_APIAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="KMS_Entity">
-      <HintPath>..\..\Shared\References\KMS_Entity.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

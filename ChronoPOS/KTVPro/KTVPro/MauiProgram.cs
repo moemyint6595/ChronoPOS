@@ -2,7 +2,6 @@
 using KTVPro.Shared.Services;
 using Microsoft.Extensions.Logging;
 using Shared.Services;
-using KMS_APIAccess.Shared;
 
 namespace KTVPro
 {
@@ -24,7 +23,6 @@ namespace KTVPro
             builder.Services.AddScoped<GlobalVariables>();
             builder.Services.AddScoped<CommonFunctions>();
             builder.Services.AddScoped<LocalStorageService>();
-            builder.Services.AddScoped<APIContext>();
             builder.Services.AddScoped<NotifierService>();
             builder.Services.AddScoped<LanguageService>();
 

@@ -16,10 +16,4 @@
     <ProjectReference Include="..\KTVPro.Shared\KTVPro.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="KMS_APIAccess">
-      <HintPath>..\..\Shared\References\KMS_APIAccess.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
