@@ -1,0 +1,33 @@
+﻿<Router AppAssembly="typeof(Layout.MainLayout).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+</Router>
+
+@code{
+
+    private DotNetObjectReference<GlobalResizeHelper>? GlobalResize;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            GlobalResize = DotNetObjectReference.Create(new GlobalResizeHelper(InvokeResize));
+            if (GlobalResize is not null)
+            {
+                await JSRuntime.InvokeVoidAsync("CommonJSFunctions.InitiateResize", GlobalResize);
+            }
+            Lang.SetLanguage("en");
+        }
+        catch (Exception ex)
+        {
+            ComFn.JSConsole("Exception", ex);
+        }
+    }
+
+    public void InvokeResize(int width, int height)
+    {
+        Console.WriteLine($"width => {width} | height => {height}");
+    }
+}

@@ -1,0 +1,88 @@
+﻿
+<div class="pu-modal-container">
+    @if (isShowModal)
+    {
+        <div class="pu-modal-dialog">
+
+            <div class="pu-modal-content @(Modalstyle)">
+
+                @if (ModalHeaderFooter.Item1)
+                {
+                    <div class="pu-modal-header">
+                        <button @onclick="CloseModal" type="button" class="btn-none pu-modal-head-crossbtn">@SVGService.CrossIcon(25, 25)</button>
+                    </div>
+                }
+
+                <div class="pu-modal-body @BodyCalClass()">
+                    @ModalContent
+                </div>
+                
+
+                @if (ModalHeaderFooter.Item2)
+                {
+                    <div class="pu-modal-footer">
+                        <div class="pu-mf-left">
+                            @ModalFooterLeft
+                        </div>
+                        <div class="pu-mf-right">
+                            @ModalFooterRight
+                        </div>
+                    </div>
+                }
+                
+
+            </div>
+
+        </div>
+    }
+</div>
+
+@code {
+
+    //Ultilies
+    [Parameter]
+    public RenderFragment ModalContent { get; set; }
+
+    [Parameter]
+    public RenderFragment ModalFooterLeft { get; set; }
+
+    [Parameter]
+    public RenderFragment ModalFooterRight { get; set; }
+
+    [Parameter]
+    public string Modalstyle { get; set; } = ModalStyle.Medium;
+
+    [Parameter]
+    public (bool, bool) ModalHeaderFooter { get; set; } = (true, true);
+
+    //EventListener
+    [Parameter]
+    public EventCallback ModalClose { get; set; }
+
+    private bool isShowModal;
+
+    private string BodyCalClass()
+    {
+        if (ModalHeaderFooter.Item1 && ModalHeaderFooter.Item2) return "pmb-hf";
+        if (ModalHeaderFooter.Item1) return "pmb-h";
+        if (ModalHeaderFooter.Item2) return "pmb-f";
+        return "";
+    }
+
+    public void ShowModal()
+    {
+        isShowModal = true;
+        StateHasChanged();
+    }
+
+    public void OnCloseModal()
+    {
+        CloseModal();
+        StateHasChanged();
+    }
+
+    private void CloseModal()
+    {
+        isShowModal = false;
+    }
+}

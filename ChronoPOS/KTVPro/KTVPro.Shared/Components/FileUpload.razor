@@ -1,0 +1,48 @@
+﻿@page "/fileupload"
+
+@if (UIDesign == FileUploadUIDesign.DragDrop)
+{
+    <div class="custome-fileupload-dragdrop-design @Class">
+        <InputFile OnChange="HandleFileSelected" />
+        <div><span>Drag your files here or click in this area.</span></div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string Class { get; set; } = string.Empty;
+
+    [Parameter]
+    public int MaxFileSizeAllow { get; set; } = 512;
+
+    [Parameter]
+    public EventCallback<FileUploadData> OnHandleFileChanged { get; set; }
+
+    [Parameter]
+    public string UIDesign { get; set; } = FileUploadUIDesign.DragDrop;
+
+    private long MaxFileSize;
+
+    protected override void OnInitialized()
+    {
+        MaxFileSize = 1024 * 1024 * MaxFileSizeAllow;
+    }
+
+    private async Task HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        IBrowserFile file = e.File;
+        if (file.Size > MaxFileSize)
+        {
+            Console.WriteLine($"File size exceeds the maximum limit of {MaxFileSizeAllow} MB.");
+            return;
+        }
+
+        FileUploadData FileData = new();
+        FileData.Buffer = new byte[file.Size];
+        await file.OpenReadStream(MaxFileSize).ReadAsync(FileData.Buffer);
+        FileData.FileName = file.Name;
+        FileData.ContentType = file.ContentType;
+
+        await OnHandleFileChanged.InvokeAsync(FileData);
+    }
+}

@@ -1,0 +1,66 @@
+﻿<div class="nav-container">
+    <div class="logo-box">
+        <span></span>
+        <span></span>
+        <span>ChronoPOS</span>
+    </div>
+    <div class="nav-menu-container">
+
+        @foreach (var menuitem in MenuList)
+        {
+            <div class="nav-menu-item-container">
+                @if (menuitem.SubMenu.Any())
+                {
+                    <div class="nav-mainmenu-text pointer">
+                        @menuitem.MainMenu 
+                    </div>
+                    foreach (var menu in menuitem.SubMenu)
+                    {
+                        <div @onclick="()=>OnSelectMenu(menu)" class="nav-menu-item @(menu == SelectedMenu ? "nav-selected-item":"")">
+                            <div>@SVGService.NavManuIcons(23, 23, menu)</div>
+                            <div>@menu</div>
+                        </div>
+                    } 
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@code{
+
+    private List<NavMenuItem> MenuList = new List<NavMenuItem>()
+    {
+        new NavMenuItem()
+        {
+            MainMenu = MainMenuSection.Ordering,
+            SubMenu = new List<string>()
+            {
+                MenuSection.Order,
+            }
+        },
+        new NavMenuItem()
+        {
+            MainMenu = MainMenuSection.Setup,
+            SubMenu = new List<string>()
+            {
+                MenuSection.Items,
+                MenuSection.Category,
+                MenuSection.Discount,
+            }
+        },
+    };
+
+    private string SelectedMenu = MenuSection.Order;
+
+    private void OnSelectMenu(string menu)
+    {
+        SelectedMenu = menu;
+        if(SelectedMenu == MenuSection.Order)
+        {
+            Nav.NavigateTo("/");
+            return;
+        }
+        Nav.NavigateTo(SelectedMenu);
+    }
+}
