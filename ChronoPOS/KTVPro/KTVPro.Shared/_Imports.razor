@@ -15,9 +15,14 @@
 @using global::Shared.Helpers
 @using global::Shared.Model
 
+@using Chrono_APIAccess;
+@using E = ChronoEntity;
+
+
 @inject IJSRuntime JSRuntime
 @inject NavigationManager Nav
 
+@inject APIContext D;
 @inject GlobalVariables Gva
 @inject CommonFunctions ComFn
 @inject NotifierService Notifier

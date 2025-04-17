@@ -1,3 +1,4 @@
+using Chrono_APIAccess;
 using KTVPro.Shared.Services;
 using KTVPro.Web.Client.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -14,5 +15,6 @@ builder.Services.AddScoped<NotifierService>();
 builder.Services.AddScoped<LanguageService>();
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddScoped<APIContext>(api => new APIContext("https://localhost:7035"));
 
 await builder.Build().RunAsync();

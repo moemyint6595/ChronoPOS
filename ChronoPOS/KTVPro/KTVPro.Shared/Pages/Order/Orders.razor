@@ -6,10 +6,10 @@
 
     <div class="view-header" >
         <div class="vh-left d-none d-md-block" >
-            
+
         </div>
         <div class="vh-right" >
-            <CustomButton Background="none" ><Label>@SVGService.PlusIcon(30, 30)</Label></CustomButton>
+            <CustomButton Background="none" OnClick="OnTest"><Label>@SVGService.PlusIcon(30, 30)</Label></CustomButton>
         </div>
     </div>
 
@@ -18,3 +18,27 @@
     </div>
 
 </div>
+
+@code{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(firstRender){
+
+           
+        }
+    }
+
+    private async Task OnTest()
+    {
+        try
+        {
+            var dd = await D.Category.GetAsync();
+            ComFn.JSConsole("reslt", dd);
+        }
+        catch (Exception ex)
+        {
+            ComFn.JSConsole("Exception", ex.Message);
+        }
+       
+    }
+}

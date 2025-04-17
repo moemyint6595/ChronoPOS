@@ -18,4 +18,13 @@
     <ProjectReference Include="..\..\Shared\Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ChronoEntity">
+      <HintPath>..\..\Shared\References\ChronoEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="Chrono_APIAccess">
+      <HintPath>..\..\Shared\References\Chrono_APIAccess.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
