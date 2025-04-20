@@ -54,6 +54,7 @@ window.CommonJSFunctions = {
 
                 //set main page
                 CommonJSFunctions.SetMainPageHeight();
+                CommonJSFunctions.CalculateContentHeight();
 
                 //invoke to C#
                 if (dotNetHelper) {
@@ -62,6 +63,21 @@ window.CommonJSFunctions = {
 
             }, 300);
         });
+    },
+
+    CalculateContentHeight: function () {
+        var mb = document.getElementById("mainbody");
+        if (mb) {
+            var minusHeight = 0;
+            var vb = document.getElementById("viewbody");
+            if (vb) {
+                var vh = document.getElementById("viewheader")
+                if (vh) {
+                    minusHeight += vh.clientHeight;
+                }
+                vb.style.height = window.innerHeight - (minusHeight) + "px";
+            }
+        }
     },
 
     ToggleLoading: function (showloading) {

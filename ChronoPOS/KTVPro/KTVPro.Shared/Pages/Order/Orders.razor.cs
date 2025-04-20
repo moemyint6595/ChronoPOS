@@ -1,21 +1,22 @@
-﻿using KTVPro.Shared.Components;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KTVPro.Shared.Pages
+namespace KTVPro.Shared.Pages.Order
 {
-    public partial class Rooms
+    public partial class Orders
     {
-        private PopupModal? modal;
-
-        private void OnShowModal()
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            if (modal is not null)
+            if (firstRender) 
             {
-                modal.ShowModal();
+                ComFn.CalBodyHeight();
+                ComFn.JSConsole("Gva categories", Gva.Categories);
+                ComFn.JSConsole("Gva SubCategories", Gva.SubCategories);
+                ComFn.JSConsole("Gva Items", Gva.Items);
+                ComFn.JSConsole("Gva Discounts", Gva.Discounts);
             }
         }
     }

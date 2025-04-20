@@ -9,5 +9,14 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.10" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="ChronoEntity">
+	    <HintPath>References\ChronoEntity.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Chrono_APIAccess">
+	    <HintPath>References\Chrono_APIAccess.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
 	
 </Project>

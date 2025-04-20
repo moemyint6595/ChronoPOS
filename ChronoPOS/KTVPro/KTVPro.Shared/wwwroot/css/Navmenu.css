@@ -1,10 +1,12 @@
-﻿.nav-container{
-    height : 100%;
-    width : 170px;
-    background : var(--nav-bg-color);
-    position : fixed;
-    top : 0;
-    left : 0;
+﻿
+.nav-container {
+    height: 100%;
+    width: 65px;
+    background: var(--nav-bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #e7e7e7;
 }
 
 .logo-box {
@@ -16,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
+    width: 65px;
     gap: 5px;
     font-size: 16px;
     padding-top : 5px;
@@ -24,8 +26,7 @@
 
     .logo-box :is(span) {
         font-weight: bold;
-        /* color : var(--core-color);*/
-        color: #d1e8fb;
+        color : var(--core-color);
     }
 
     .logo-box span:nth-child(3) {
@@ -38,8 +39,8 @@
 
 .nav-menu-container
 {
-    margin-top : 50px;
-    padding-top : 15px;
+    margin-top : 60px;
+    /*padding-top : 15px;*/
 }
 
 .nav-menu-item-container {
@@ -48,8 +49,9 @@
     gap: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-top: 1px solid #5f5f5f;
+   /* border-top: 1px solid #5f5f5f;*/
     margin: 0px 10px;
+
 }
 
 .nav-menu-item {
@@ -60,6 +62,7 @@
     position: relative;
     transition: all ease-in-out 0.2s;
     cursor: pointer;
+    justify-content : center;
 }
 
 .nav-selected-item {
@@ -78,7 +81,7 @@
 }
 
 .nav-menu-item div:nth-child(1) {
-    width: 27%;
+    /*width: 27%;*/
 }
 
 .nav-menu-item div:nth-child(2) {

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Shared.Services.LanguageService;
-
-namespace Shared.Services
+﻿namespace Shared.Services
 {
     public class LanguageService
     {

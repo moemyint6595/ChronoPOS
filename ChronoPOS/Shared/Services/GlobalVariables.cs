@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using E = ChronoEntity;
 
 namespace Shared.Services
 {
@@ -10,6 +6,11 @@ namespace Shared.Services
     {
         public string MyString { get; private set; } = "MMZ 1996";
         public string APIEndPoint { get; private set; } = "https://192.168.100.173:2002";
+
+        public List<E.Entities.Category> Categories = [];
+        public List<E.Entities.SubCategory> SubCategories = [];
+        public List<E.Entities.Item> Items = [];
+        public List<E.Entities.Discount> Discounts = [];
     }
 
     public readonly struct MenuSection

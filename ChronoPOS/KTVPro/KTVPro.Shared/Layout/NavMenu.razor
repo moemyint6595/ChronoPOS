@@ -1,29 +1,30 @@
 ﻿<div class="nav-container">
     <div class="logo-box">
-        <span></span>
-        <span></span>
-        <span>ChronoPOS</span>
+        <span>
+            <AppIcon Height="35" Width="35" />
+        </span>
     </div>
     <div class="nav-menu-container">
 
-        @foreach (var menuitem in MenuList)
-        {
-            <div class="nav-menu-item-container">
+        <div class="nav-menu-item-container">
+            @foreach (var menuitem in MenuList)
+            {
                 @if (menuitem.SubMenu.Any())
                 {
-                    <div class="nav-mainmenu-text pointer">
+                    @*  <div class="nav-mainmenu-text pointer">
                         @menuitem.MainMenu 
-                    </div>
+                    </div> *@
                     foreach (var menu in menuitem.SubMenu)
                     {
                         <div @onclick="()=>OnSelectMenu(menu)" class="nav-menu-item @(menu == SelectedMenu ? "nav-selected-item":"")">
                             <div>@SVGService.NavManuIcons(23, 23, menu)</div>
-                            <div>@menu</div>
+                            @* <div>@menu</div> *@
                         </div>
-                    } 
+                    }
                 }
-            </div>
-        }
+
+            }
+        </div>
     </div>
 </div>
 
@@ -33,17 +34,9 @@
     {
         new NavMenuItem()
         {
-            MainMenu = MainMenuSection.Ordering,
             SubMenu = new List<string>()
             {
                 MenuSection.Order,
-            }
-        },
-        new NavMenuItem()
-        {
-            MainMenu = MainMenuSection.Setup,
-            SubMenu = new List<string>()
-            {
                 MenuSection.Items,
                 MenuSection.Category,
                 MenuSection.Discount,

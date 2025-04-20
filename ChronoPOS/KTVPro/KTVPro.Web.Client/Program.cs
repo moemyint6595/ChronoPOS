@@ -15,6 +15,6 @@ builder.Services.AddScoped<NotifierService>();
 builder.Services.AddScoped<LanguageService>();
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddScoped<APIContext>(api => new APIContext("https://localhost:7035"));
+builder.Services.AddScoped<APIContext>(api => new APIContext("http://localhost:5000"));
 
 await builder.Build().RunAsync();
