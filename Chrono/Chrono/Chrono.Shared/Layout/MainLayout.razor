@@ -1,0 +1,38 @@
+﻿@inherits LayoutComponentBase
+
+<div id="main-page" class="page">
+    @if(isFinishedInit)
+    {
+        <MainHeader />
+        <NavMenu />
+        <main>
+            @Body
+        </main>
+    }
+    else
+    {
+        //Add data initializing UI
+    }
+</div>
+
+@code{
+    private bool isFinishedInit;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                await R.JSRuntime.InvokeVoidAsync("CommonJSFunctions.SetMainPageHeight");
+                //await ComFn.APIFuns.GetAllData();
+                isFinishedInit = true;
+                await InvokeAsync(StateHasChanged);
+            }
+            catch (Exception ex)
+            {
+                R.ComFn.JSConsole("Exception", ex);
+            }
+        }
+    }
+}

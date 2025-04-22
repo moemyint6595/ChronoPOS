@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="_content/Chrono.Shared/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="_content/Chrono.Shared/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="_content/Chrono.Shared/css/app.css" />
+    <link rel="stylesheet" href="_content/Chrono.Shared/css/Navmenu.css" />
+    <link rel="stylesheet" href="Chrono.Web.styles.css" />
+    <script src="_content/Chrono.Shared/js/Root.js"></script>
+    <script src="_content/Chrono.Shared/js/main.js"></script>
+    <script src="_content/Chrono.Shared/js/chart.min.js"></script>
+    <HeadOutlet @rendermode="@(new InteractiveWebAssemblyRenderMode(prerender : false))" />
+</head>
+
+<body>
+    <Routes @rendermode="@(new InteractiveWebAssemblyRenderMode(prerender : false))" />
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>

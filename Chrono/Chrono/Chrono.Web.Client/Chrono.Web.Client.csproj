@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Chrono.Shared\Chrono.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ChronoEntity">
+      <HintPath>..\..\GlobalShared\References\ChronoEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="Chrono_APIAccess">
+      <HintPath>..\..\GlobalShared\References\Chrono_APIAccess.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
