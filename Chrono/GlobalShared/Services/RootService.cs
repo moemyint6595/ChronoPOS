@@ -22,17 +22,18 @@ namespace GlobalShared.Services
         public readonly LanguageService Lang;
         public readonly LocalStorageService LS;
         public readonly NotifierService Notifier;
+        public readonly SignalRService SignalR;
         public RootService(IJSRuntime _JSRuntime, NavigationManager _Nav)
         {
             JSRuntime = _JSRuntime;
             Nav = _Nav;
             Gva = new GlobalVariables();
-            D = new APIContext("http://localhost:5000");
+            D = new APIContext(Gva.APIEndPoint);
             ComFn = new CommonFunctions(Gva,JSRuntime,D);
             Lang = new LanguageService();
             LS = new LocalStorageService(JSRuntime);
             Notifier = new NotifierService();
-            
+            SignalR = new SignalRService(Notifier, Gva.APIEndPoint);
         }
     }
 }

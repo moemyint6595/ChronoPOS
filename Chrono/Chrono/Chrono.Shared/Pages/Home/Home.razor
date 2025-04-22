@@ -1,0 +1,41 @@
+﻿@page "/"
+@layout MainLayout
+@implements IDisposable
+
+<div id="mainbody" class="main-body">
+    <div id="viewbody" class="view-body">
+        <button type="button" class="btn btn-primary" @onclick="Send">Send</button>
+    </div>
+</div>
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        R.Notifier.Notify += ReceivedEmit;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            R.ComFn.CalBodyHeight();
+        }
+    }
+
+    private void ReceivedEmit(string on, string an, object? data)
+    {
+        R.ComFn.JSConsole("Received on =>", on);
+        R.ComFn.JSConsole("Received an =>", an);
+        R.ComFn.JSConsole("Received data =>", data);
+    }
+
+    private void Send()
+    {
+        R.SignalR.Send();
+    }
+
+    public void Dispose(){
+        R.Notifier.Notify -= ReceivedEmit;
+    }
+}

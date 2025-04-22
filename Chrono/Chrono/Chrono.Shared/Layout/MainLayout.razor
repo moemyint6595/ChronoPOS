@@ -25,7 +25,8 @@
             try
             {
                 await R.JSRuntime.InvokeVoidAsync("CommonJSFunctions.SetMainPageHeight");
-                //await ComFn.APIFuns.GetAllData();
+                //await R.ComFn.APIFuns.GetAllData();
+                await R.SignalR.CreateConnection();
                 isFinishedInit = true;
                 await InvokeAsync(StateHasChanged);
             }

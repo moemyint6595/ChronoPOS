@@ -31,7 +31,7 @@ namespace GlobalShared.Services.StaticServices
 
     public readonly struct NotifierObjectName
     {
-        public const string ThemeUpdate = "ThemeUpdate";
+        public const string SignalR = "SignalR";
     }
 
     public readonly struct NotifierActionName
