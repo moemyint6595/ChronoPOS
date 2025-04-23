@@ -7,7 +7,7 @@ namespace GlobalShared.Services.MicroServices
 {
     public class CommonFunctions
     {
-        private GlobalVariables Gva;
+        private readonly GlobalVariables Gva;
         private readonly IJSRuntime JSRuntime;
         private readonly APIContext D;
         public readonly APIFunctions APIFuns;
@@ -24,9 +24,9 @@ namespace GlobalShared.Services.MicroServices
             JSRuntime.InvokeVoidAsync("console.log", $"{title} => ", data ?? "Debug Console loging");
         }
 
-        public void CalBodyHeight()
+        public async Task CalBodyHeight()
         {
-            JSRuntime.InvokeVoidAsync("CommonJSFunctions.CalculateContentHeight");
+            await JSRuntime.InvokeVoidAsync("CommonJSFunctions.CalculateContentHeight");
         }
     }
 
@@ -130,7 +130,7 @@ namespace GlobalShared.Services.MicroServices
             return UpdateDataHandler[tableName];
         }
 
-        private Dictionary<string, bool> UpdateDataHandler = new Dictionary<string, bool>()
+        private readonly Dictionary<string, bool> UpdateDataHandler = new Dictionary<string, bool>()
         {
             {nameof(Category), false },
             {nameof(SubCategory), false },

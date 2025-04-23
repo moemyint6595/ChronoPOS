@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chrono.Web.Client", "Chrono
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalShared", "GlobalShared\GlobalShared.csproj", "{2E74CF9D-892D-48A5-BD57-233E1249E104}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonControl", "CommonControl\CommonControl.csproj", "{EB1D10AB-4D94-4837-AA89-3450049E982E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2E74CF9D-892D-48A5-BD57-233E1249E104}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E74CF9D-892D-48A5-BD57-233E1249E104}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E74CF9D-892D-48A5-BD57-233E1249E104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1D10AB-4D94-4837-AA89-3450049E982E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1D10AB-4D94-4837-AA89-3450049E982E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1D10AB-4D94-4837-AA89-3450049E982E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1D10AB-4D94-4837-AA89-3450049E982E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

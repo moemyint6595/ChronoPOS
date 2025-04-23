@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
@@ -15,17 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CommonControl\CommonControl.csproj" />
-    <ProjectReference Include="..\..\GlobalShared\GlobalShared.csproj" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="ChronoEntity">
-      <HintPath>..\..\GlobalShared\References\ChronoEntity.dll</HintPath>
-    </Reference>
-    <Reference Include="Chrono_APIAccess">
-      <HintPath>..\..\GlobalShared\References\Chrono_APIAccess.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\GlobalShared\GlobalShared.csproj" />
   </ItemGroup>
 
 </Project>

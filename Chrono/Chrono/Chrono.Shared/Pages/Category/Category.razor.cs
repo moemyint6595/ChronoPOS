@@ -12,7 +12,7 @@ namespace Chrono.Shared.Pages.Category
         {
             if (firstRender)
             {
-                R.ComFn.CalBodyHeight();
+                await R.ComFn.CalBodyHeight();
             }
         }
     }

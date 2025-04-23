@@ -12,7 +12,7 @@ namespace Chrono.Shared.Pages.Order
         {
             if (firstRender) 
             {
-                R.ComFn.CalBodyHeight();
+                await R.ComFn.CalBodyHeight();
                 R.ComFn.JSConsole("Gva categories", R.Gva.Categories);
                 R.ComFn.JSConsole("Gva SubCategories", R.Gva.SubCategories);
                 R.ComFn.JSConsole("Gva Items", R.Gva.Items);
