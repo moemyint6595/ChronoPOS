@@ -13,6 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\CustomerApp\CustomerApp.csproj" />
+    <ProjectReference Include="..\..\ShopOwnerApp\ShopOwnerApp.csproj" />
     <ProjectReference Include="..\Chrono.Shared\Chrono.Shared.csproj" />
   </ItemGroup>
 
@@ -25,4 +27,9 @@
     </Reference>
   </ItemGroup>
 
+	<ItemGroup>
+		<BlazorWebAssemblyLazyLoad Include="CustomerApp.wasm" />
+		<BlazorWebAssemblyLazyLoad Include="ShopOwnerApp.wasm" />
+	</ItemGroup>
+	
 </Project>

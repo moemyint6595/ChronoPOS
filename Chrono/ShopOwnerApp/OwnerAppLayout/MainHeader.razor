@@ -1,0 +1,35 @@
+﻿@implements IDisposable
+
+<div id="mainheader" class="main-header">
+    <div class="mh-first-div">@R.Gva.CurrentPage</div>
+    <div class="mh-second-div">
+        <div>@SVGService.BellIcon(20,20)</div>
+        <div>Notification</div>
+    </div>
+    @* <div class="mh-third-div">
+        <div>@SVGService.CalendarIcon(20, 20)</div>
+        <div>@DateTime.Now.ToString("dddd, dd MMMM yyyy")</div>
+    </div> *@
+</div>
+
+@code {
+
+
+    protected override void OnInitialized()
+    {
+        R.Notifier.Notify += ReceivedEmit;
+    }
+
+    private void ReceivedEmit(string on, string an, object? data)
+    {
+        if (on == NotifierObjectName.MainHeader && an == NotifierActionName.MainHeaderNameChange)
+        {
+            StateHasChanged();
+        }
+    }
+
+    public void Dispose()
+    {
+        R.Notifier.Notify  -= ReceivedEmit;
+    }
+}

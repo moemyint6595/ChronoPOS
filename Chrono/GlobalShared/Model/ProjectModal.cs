@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GlobalShared.Services.StaticServices;
+using Microsoft.AspNetCore.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,16 @@ namespace GlobalShared.Model
     {
         public string MainMenu { get; set; } = string.Empty;
 
-        public List<string> SubMenu { get; set; } = new();
+        public List<SubMenuItem> SubMenu { get; set; } = [];
+    }
+
+    public class SubMenuItem
+    {
+        public string Name { get; set; } = string.Empty;
+
+        public string Route { get; set; } = string.Empty;
+
+        public RenderFragment Icon { get; set; } = SVGService.NavDefaultIcon(20, 20);
     }
 
     public struct AppTheme

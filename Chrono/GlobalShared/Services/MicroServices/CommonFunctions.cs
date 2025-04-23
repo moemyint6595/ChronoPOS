@@ -28,6 +28,11 @@ namespace GlobalShared.Services.MicroServices
         {
             await JSRuntime.InvokeVoidAsync("CommonJSFunctions.CalculateContentHeight");
         }
+
+        public async Task ExpendToggle()
+        {
+            await JSRuntime.InvokeVoidAsync("CommonJSFunctions.NavMenuExpendToggle");
+        }
     }
 
     public class APIFunctions(APIContext _d, GlobalVariables _gva)

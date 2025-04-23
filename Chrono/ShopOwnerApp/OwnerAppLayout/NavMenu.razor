@@ -1,0 +1,51 @@
+﻿<div class="nav-container">
+    <div class="logo-box">
+        <span>
+            <AppIcon Height="35" Width="35" />
+        </span>
+    </div>
+    <div class="nav-menu-container">
+        <div class="nav-menu-item-container">
+            @foreach (var menuitem in MenuList)
+            {
+                @if (menuitem.SubMenu.Any())
+                {
+                    foreach (var menu in menuitem.SubMenu)
+                    {
+                        <div @onclick="()=>OnSelectMenu(menu)" class="nav-menu-item @(menu.Name == R.Gva.CurrentPage ? "nav-selected-item":"")">
+                            <div>@menu.Icon</div>
+                            <div class="navmenu-label">@menu.Name</div>
+                        </div>
+                    }
+                }
+
+            }
+        </div>
+    </div>
+    <div class="nav-expend-btnbox">
+        <button type="button" @onclick="R.ComFn.ExpendToggle" class="btn-none">@SVGService.ArrowBackIcon(30, 30)</button>
+    </div>
+</div>
+
+@code{
+
+    private List<NavMenuItem> MenuList = new List<NavMenuItem>()
+    {
+        new NavMenuItem()
+        {
+            SubMenu = new List<SubMenuItem>()
+            {
+               new SubMenuItem(){Name = MenuSection.Main, Route =  "/owner", Icon = SVGService.MainIcon(20,20) },
+               new SubMenuItem(){Name = MenuSection.Order, Route =  "/owner/"+MenuSection.Order, Icon = SVGService.OrderIcon(20,20) },
+               new SubMenuItem(){Name = MenuSection.Category, Route =  "/owner/"+MenuSection.Category, Icon = SVGService.CalendarIcon(20,20) },
+            }
+        },
+    };
+
+    private async Task OnSelectMenu(SubMenuItem menu)
+    {
+        R.Gva.CurrentPage = menu.Name;
+        R.Nav.NavigateTo(menu.Route);
+        await R.Notifier.Update(NotifierObjectName.MainHeader, NotifierActionName.MainHeaderNameChange);
+    }
+}

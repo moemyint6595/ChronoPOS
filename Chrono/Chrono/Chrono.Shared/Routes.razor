@@ -1,4 +1,11 @@
-﻿<Router AppAssembly="typeof(Layout.MainLayout).Assembly">
+﻿@using System.Reflection
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.WebAssembly.Services
+@inject LazyAssemblyLoader AssemblyLoader
+
+<Router AppAssembly="typeof(Layout.MainLayout).Assembly" 
+AdditionalAssemblies="lazyLoadedAssemblies" 
+OnNavigateAsync="OnNavigateAsync">
     <Found Context="routeData">
         <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
         <FocusOnNavigate RouteData="routeData" Selector="h1" />
@@ -8,6 +15,8 @@
 @code {
 
     private DotNetObjectReference<GlobalResizeHelper>? GlobalResize;
+
+    private List<Assembly> lazyLoadedAssemblies = [];
 
     protected override async Task OnInitializedAsync()
     {
@@ -26,8 +35,37 @@
         }
     }
 
+    private async Task OnNavigateAsync(NavigationContext args)
+    {
+        try
+        {
+            R.ComFn.JSConsole("Path", args.Path);
+            var assemblylist = GetLazyAssembly(args.Path);
+            R.ComFn.JSConsole("assemblylist", assemblylist);
+            var assemblies = await AssemblyLoader.LoadAssembliesAsync(assemblylist);
+            lazyLoadedAssemblies.AddRange(assemblies);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("OnNavigateAsync Expection =>" + ex.Message);
+        }
+    }
+
     public void InvokeResize(int width, int height)
     {
         Console.WriteLine($"width => {width} | height => {height}");
+    }
+
+    private string[] GetLazyAssembly(string path)
+    {
+        if (path.StartsWith("customer"))
+        {
+            return ["CustomerApp.wasm"];
+        }
+        else if (path.StartsWith("owner"))
+        {
+            return ["ShopOwnerApp.wasm"];
+        }
+        return [];
     }
 }

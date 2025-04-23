@@ -8,12 +8,15 @@ using Microsoft.AspNetCore.SignalR.Client;
 
 namespace GlobalShared.Services.MicroServices
 {
-    public class SignalRService(NotifierService _notifier, string Uri)
+    public class SignalRService(string Uri)
     {
-        private readonly NotifierService Notifier = _notifier;
-        private string EndPoint = Uri;
+        private readonly string EndPoint = Uri;
 
         private HubConnection? _hubConnection;
+
+        public event Func<string, string, object?, Task>? ListenAsync;
+        public Action<string, string, object?>? Listen;
+
         public async Task CreateConnection()
         {
             string hubEndPoint = EndPoint + "/chathub";
@@ -34,7 +37,11 @@ namespace GlobalShared.Services.MicroServices
         {
             _hubConnection?.On<string, string>("ReceiveMessage", async (user, message) =>
             {
-                await Notifier.Update(NotifierObjectName.SignalR, "", new { user, message } );
+                if (ListenAsync is not null)
+                {
+                    await ListenAsync.Invoke(NotifierObjectName.SignalR, "", new { user, message });
+                }
+                Listen?.Invoke(NotifierObjectName.SignalR, "", new { user, message });
             });
         }
         private async Task OnStartHubConnection()
@@ -49,8 +56,7 @@ namespace GlobalShared.Services.MicroServices
 
         public void Send()
         {
-            if(_hubConnection is not null)
-                _hubConnection.SendAsync("SendMessage", "MoeMyintZaw", "Example message");
+            _hubConnection?.SendAsync("SendMessage", "MoeMyintZaw", "Example message");
         }
 
         public class RetryPolicy : IRetryPolicy

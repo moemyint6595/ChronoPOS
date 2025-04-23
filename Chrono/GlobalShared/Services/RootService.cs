@@ -30,10 +30,10 @@ namespace GlobalShared.Services
             Gva = new GlobalVariables();
             D = new APIContext(Gva.APIEndPoint);
             ComFn = new CommonFunctions(Gva,JSRuntime,D);
-            Lang = new LanguageService();
+            Lang = new LanguageService(); 
             LS = new LocalStorageService(JSRuntime);
             Notifier = new NotifierService();
-            SignalR = new SignalRService(Notifier, Gva.APIEndPoint);
+            SignalR = new SignalRService(Gva.APIEndPoint);
         }
     }
 }

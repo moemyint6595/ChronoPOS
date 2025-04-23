@@ -69,7 +69,7 @@ window.CommonJSFunctions = {
         var mb = document.getElementById("mainbody");
         var mh = document.getElementById("mainheader");
         if (mb) {
-            var minusHeight = 0;
+            var minusHeight = 1;
             if (mh) {
                 minusHeight += mh.clientHeight;
             }
@@ -140,5 +140,12 @@ window.CommonJSFunctions = {
                 behavior: 'smooth'
             });
         }
-    }
+    },
+
+    NavMenuExpendToggle: function () {
+        var mp = document.getElementById("main-page");
+        if (mp) {
+            mp.classList.toggle("nav-menu-expended");
+        }
+    },
 }

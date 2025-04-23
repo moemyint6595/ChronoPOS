@@ -34,6 +34,9 @@ app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(
         typeof(Chrono.Shared._Imports).Assembly,
-        typeof(Chrono.Web.Client._Imports).Assembly);
+        typeof(Chrono.Web.Client._Imports).Assembly,
+        typeof(CustomerApp._Imports).Assembly,
+        typeof(ShopOwnerApp._Imports).Assembly
+        );
 
 app.Run();

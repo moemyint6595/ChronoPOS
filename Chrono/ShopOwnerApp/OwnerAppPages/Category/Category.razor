@@ -1,31 +1,17 @@
-﻿@page "/"
+﻿@page "/owner/Category"
 @layout MainLayout
-@implements IDisposable
 
 <div id="mainbody" class="main-body">
     <div id="viewbody" class="view-body">
-        <button type="button" class="btn btn-primary" @onclick="Goto">Send</button>
     </div>
 </div>
 
-
-@code {
-
+@code{
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             await R.ComFn.CalBodyHeight();
         }
-    }
-
-    private void Goto()
-    {
-        R.Nav.NavigateTo("/owner");
-    }
-
-    public void Dispose()
-    {
-       
     }
 }

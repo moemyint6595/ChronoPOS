@@ -29,14 +29,21 @@ namespace GlobalShared.Services.StaticServices
         public const string Setup = "Setup";
     }
 
+    public readonly struct AppType
+    {
+        public const string Owner = "owner";
+        public const string Customer = "customer";
+    }
+
     public readonly struct NotifierObjectName
     {
+        public const string MainHeader = "MainHeader";
         public const string SignalR = "SignalR";
     }
 
     public readonly struct NotifierActionName
     {
-        public const string ThemeUpdateAction = "ThemeUpdateAction";
+        public const string MainHeaderNameChange = "MainHeaderNameChange";
     }
 
     public readonly struct FileUploadUIDesign
