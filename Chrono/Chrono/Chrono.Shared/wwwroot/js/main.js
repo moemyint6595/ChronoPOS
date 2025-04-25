@@ -144,8 +144,12 @@ window.CommonJSFunctions = {
 
     NavMenuExpendToggle: function () {
         var mp = document.getElementById("main-page");
+        var sb = document.getElementById("sidebar");
         if (mp) {
             mp.classList.toggle("nav-menu-expended");
+        }
+        if (sb) {
+            sb.classList.toggle("collapsed");
         }
     },
 }

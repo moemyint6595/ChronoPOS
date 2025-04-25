@@ -15,6 +15,7 @@
             {
                 await R.JSRuntime.InvokeVoidAsync("CommonJSFunctions.SetMainPageHeight");
                 await InvokeAsync(StateHasChanged);
+                R.Nav.NavigateTo("/owner");
             }
             catch (Exception ex)
             {

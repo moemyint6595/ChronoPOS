@@ -1,10 +1,9 @@
-﻿@page "/owner/home"
+﻿@page "/owner/setup"
 @layout MainLayout
 @implements IDisposable
 
 <div id="mainbody" class="main-body">
     <div id="viewbody" class="view-body">
-        
     </div>
 </div>
 
@@ -25,12 +24,7 @@
 
     private void ReceivedEmit(string on, string an, object? data)
     {
-       
-    }
-
-    private void Send()
-    {
-        R.SignalR.Send();
+        
     }
 
     public void Dispose()

@@ -33,7 +33,7 @@ namespace GlobalShared.Services
             Lang = new LanguageService(); 
             LS = new LocalStorageService(JSRuntime);
             Notifier = new NotifierService();
-            SignalR = new SignalRService(Gva.APIEndPoint);
+            SignalR = new SignalRService(Gva.APIEndPoint, Notifier);
         }
     }
 }

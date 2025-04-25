@@ -1,29 +1,31 @@
-﻿<div class="nav-container">
-    <div class="logo-box">
-        <span>
-            <AppIcon Height="35" Width="35" />
-        </span>
+﻿<div id="sidebar" class="sidebar collapsed">
+    <div class="sidebar-header">
+        <div class="logo">C</div>
+        <div class="logo-text">Chrono POS</div>
     </div>
-    <div class="nav-menu-container">
-        <div class="nav-menu-item-container">
-            @foreach (var menuitem in MenuList)
+    <button @onclick="R.ComFn.ExpendToggle" type="button" class="btn-none toggle-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+    <div class="sidebar-menu">
+        @foreach (var menuitem in MenuList)
+        {
+            <div class="menu-category">@menuitem.MainMenu</div>
+            @if (menuitem.SubMenu.Any())
             {
-                @if (menuitem.SubMenu.Any())
+                foreach (var menu in menuitem.SubMenu)
                 {
-                    foreach (var menu in menuitem.SubMenu)
-                    {
-                        <div @onclick="()=>OnSelectMenu(menu)" class="nav-menu-item @(menu.Name == R.Gva.CurrentPage ? "nav-selected-item":"")">
-                            <div>@menu.Icon</div>
-                            <div class="navmenu-label">@menu.Name</div>
+                    <button @onclick="()=>OnSelectMenu(menu)" class="btn-none menu-item @(menu.Name == R.Gva.CurrentPage ? "active":"")">
+                        <div class="menu-icon">
+                           @menu.Icon
                         </div>
-                    }
+                        <div class="menu-text">@menu.Name</div>
+                    </button>
                 }
-
             }
-        </div>
-    </div>
-    <div class="nav-expend-btnbox">
-        <button type="button" @onclick="R.ComFn.ExpendToggle" class="btn-none">@SVGService.ArrowBackIcon(30, 30)</button>
+
+        }
     </div>
 </div>
 
@@ -33,11 +35,13 @@
     {
         new NavMenuItem()
         {
+            MainMenu = MainMenuSection.Setup,
             SubMenu = new List<SubMenuItem>()
             {
-               new SubMenuItem(){Name = MenuSection.Main, Route =  "/owner", Icon = SVGService.MainIcon(20,20) },
-               new SubMenuItem(){Name = MenuSection.Order, Route =  "/owner/"+MenuSection.Order, Icon = SVGService.OrderIcon(20,20) },
-               new SubMenuItem(){Name = MenuSection.Category, Route =  "/owner/"+MenuSection.Category, Icon = SVGService.CalendarIcon(20,20) },
+               new SubMenuItem(){Name = MenuSection.Order, Route =  "/owner", Icon = SVGService.OrderIcon(18,18) },
+               new SubMenuItem(){Name = MenuSection.Main, Route =  "/owner/home", Icon = SVGService.MainIcon(18,18) },
+               new SubMenuItem(){Name = MenuSection.Setup, Route =  "/owner/setup", Icon = SVGService.SetupIcon(18,18) },
+               new SubMenuItem(){Name = MenuSection.Category, Route =  "/owner/"+MenuSection.Category, Icon = SVGService.CalendarIcon(18,18) },
             }
         },
     };

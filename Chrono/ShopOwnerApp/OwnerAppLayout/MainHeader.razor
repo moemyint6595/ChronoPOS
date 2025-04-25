@@ -17,7 +17,7 @@
 
     protected override void OnInitialized()
     {
-        R.Notifier.Notify += ReceivedEmit;
+        R.Notifier.Listen += ReceivedEmit;
     }
 
     private void ReceivedEmit(string on, string an, object? data)
@@ -30,6 +30,6 @@
 
     public void Dispose()
     {
-        R.Notifier.Notify  -= ReceivedEmit;
+        R.Notifier.Listen -= ReceivedEmit;
     }
 }

@@ -39,9 +39,7 @@ OnNavigateAsync="OnNavigateAsync">
     {
         try
         {
-            R.ComFn.JSConsole("Path", args.Path);
             var assemblylist = GetLazyAssembly(args.Path);
-            R.ComFn.JSConsole("assemblylist", assemblylist);
             var assemblies = await AssemblyLoader.LoadAssembliesAsync(assemblylist);
             lazyLoadedAssemblies.AddRange(assemblies);
         }

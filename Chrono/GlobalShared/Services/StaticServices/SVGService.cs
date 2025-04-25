@@ -204,8 +204,22 @@ namespace GlobalShared.Services.StaticServices
        	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
                         <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
                         <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
-                        <g id=""SVGRepo_iconCarrier""> <path fill-rule=""evenodd"" clip-rule=""evenodd"" d=""M13.1061 22H10.8939C7.44737 22 5.72409 22 4.54903 20.9882C3.37396 19.9764 3.13025 18.2827 2.64284 14.8952L2.36407 12.9579C1.98463 10.3208 1.79491 9.00229 2.33537 7.87495C2.87583 6.7476 4.02619 6.06234 6.32691 4.69181L7.71175 3.86687C9.80104 2.62229 10.8457 2 12 2C13.1543 2 14.199 2.62229 16.2882 3.86687L17.6731 4.69181C19.9738 6.06234 21.1242 6.7476 21.6646 7.87495C22.2051 9.00229 22.0154 10.3208 21.6359 12.9579L21.3572 14.8952C20.8697 18.2827 20.626 19.9764 19.451 20.9882C18.2759 22 16.5526 22 13.1061 22ZM8.39757 15.5532C8.64423 15.2204 9.11395 15.1506 9.44671 15.3973C10.1751 15.9371 11.0542 16.2498 12.0001 16.2498C12.946 16.2498 13.8251 15.9371 14.5535 15.3973C14.8863 15.1506 15.356 15.2204 15.6026 15.5532C15.8493 15.8859 15.7795 16.3557 15.4467 16.6023C14.4743 17.3231 13.2851 17.7498 12.0001 17.7498C10.7151 17.7498 9.5259 17.3231 8.55349 16.6023C8.22072 16.3557 8.15092 15.8859 8.39757 15.5532Z"" fill=""currentcolor""/> </g>
+                        <g xmlns="""" id=""SVGRepo_iconCarrier""> <path d=""M2 12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274C22 8.77128 22 9.91549 22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039Z"" stroke=""currentcolor"" stroke-width=""1.5""/> <path d=""M15 18H9"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-linecap=""round""/> </g>
                     </svg>
+                ", w, h));
+            };
+        }
+
+        public static RenderFragment SetupIcon(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
+                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                        <g id=""SVGRepo_iconCarrier""> <path d=""M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-linecap=""round"" stroke-linejoin=""round""/> <path d=""M15.5699 18.5001V14.6001"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-miterlimit=""10"" stroke-linecap=""round"" stroke-linejoin=""round""/> <path d=""M15.5699 7.45V5.5"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-miterlimit=""10"" stroke-linecap=""round"" stroke-linejoin=""round""/> <path d=""M15.57 12.65C17.0059 12.65 18.17 11.4859 18.17 10.05C18.17 8.61401 17.0059 7.44995 15.57 7.44995C14.134 7.44995 12.97 8.61401 12.97 10.05C12.97 11.4859 14.134 12.65 15.57 12.65Z"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-miterlimit=""10"" stroke-linecap=""round"" stroke-linejoin=""round""/> <path d=""M8.43005 18.5V16.55"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-miterlimit=""10"" stroke-linecap=""round"" stroke-linejoin=""round""/> <path d=""M8.43005 9.4V5.5"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-miterlimit=""10"" stroke-linecap=""round"" stroke-linejoin=""round""/> <path d=""M8.42996 16.5501C9.8659 16.5501 11.03 15.386 11.03 13.9501C11.03 12.5142 9.8659 11.3501 8.42996 11.3501C6.99402 11.3501 5.82996 12.5142 5.82996 13.9501C5.82996 15.386 6.99402 16.5501 8.42996 16.5501Z"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-miterlimit=""10"" stroke-linecap=""round"" stroke-linejoin=""round""/> </g>
+                     </svg>
                 ", w, h));
             };
         }
@@ -215,11 +229,11 @@ namespace GlobalShared.Services.StaticServices
             return (builder) =>
             {
                 builder.AddMarkupContent(0, string.Format(@"
-       	             <svg height=""{1}"" width=""{0}"" version=""1.1"" id=""_x32_"" viewBox=""0 0 512 512"" xml:space=""preserve"" fill=""currentcolor"" transform=""matrix(-1, 0, 0, 1, 0, 0)"">
-                                <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
-                                <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
-                                <g id=""SVGRepo_iconCarrier""> <g><path fill=""currentcolor"" d=""M430.126,237.978H81.874c-15.456,0-27.984,12.528-27.984,27.984c0,15.456,12.528,27.984,27.984,27.984h348.252 c15.456,0,27.984-12.528,27.984-27.984C458.111,250.507,445.582,237.978,430.126,237.978z""/> <path fill=""currentcolor"" d=""M273.934,50.479c6.398-5.229,10.567-13.075,10.567-21.978C284.501,12.76,271.738,0,256,0 c-15.738,0-28.5,12.76-28.5,28.501c0,8.903,4.169,16.75,10.567,21.978c-86.018,8.964-153.083,81.689-153.083,170.075h342.033 C427.017,132.168,359.952,59.443,273.934,50.479z M184.083,192.57h-55.568c0-55.793,42.001-101.705,96.094-108.021L184.083,192.57z ""/> <path fill=""currentcolor"" d=""M365.369,380.852l-8.575-6.061c-8.56-6.036-14.126-15.474-15.292-25.896l-3.924-35.102 c0.122-3.996,0.161-9.596-2.644-12.449c-2.806-2.854-6.657-4.446-10.662-4.398v0.049c-4.782,0.054-10.789-0.407-15.918,6.407 l-14.654,26.278c-9.711,16.184-22.188,16.16-35.218,11.666l-102.16-44.844c-5.6-1.925-11.8,0.037-15.277,4.828l-0.139,0.195 c-4.206,5.794-3.128,13.87,2.45,18.365l117.614,97.903l66.205,33.268l-10.944,20.12L389.27,512l58.756-107.997l-73.043-40.817 L365.369,380.852z M422.823,411.29L381.9,486.511l-40.465-22.616l40.92-75.221L422.823,411.29z""/> <circle fill=""currentcolor"" cx=""395.522"" cy=""421.433"" r=""10.105""/> </g> </g>
-                            </svg>
+       	             <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
+                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                        <g id=""SVGRepo_iconCarrier""> <path d=""M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z"" stroke=""currentcolor"" stroke-width=""1.5""/> <path d=""M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z"" stroke=""currentcolor"" stroke-width=""1.5""/> <path d=""M11 10.8L12.1429 12L15 9"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-linecap=""round"" stroke-linejoin=""round""/> <path d=""M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-linecap=""round""/> </g>
+                      </svg>
                 ", w, h));
             };
         }

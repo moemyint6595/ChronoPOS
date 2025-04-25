@@ -4,16 +4,17 @@
     {
         public async Task Update(string objname = "", string action = "", object? obj = null)
         {
-            if (Notify != null)
+            if (Listen != null)
             {
-                Notify.Invoke(objname, action, obj);
+                Listen.Invoke(objname, action, obj);
             }
-            if (NotifyAsync != null)
+            if (ListenAsync != null)
             {
-                await NotifyAsync.Invoke(objname, action, obj);
+                await ListenAsync.Invoke(objname, action, obj);
             }
         }
-        public event Func<string, string, object?, Task>? NotifyAsync;
-        public Action<string, string, object?>? Notify;
+
+        public event Func<string, string, object?, Task>? ListenAsync;
+        public Action<string, string, object?>? Listen;
     }
 }

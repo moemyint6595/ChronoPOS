@@ -8,20 +8,16 @@ using Microsoft.AspNetCore.SignalR.Client;
 
 namespace GlobalShared.Services.MicroServices
 {
-    public class SignalRService(string Uri)
+    public class SignalRService(string Uri, NotifierService notifierService)
     {
         private readonly string EndPoint = Uri;
+        private readonly NotifierService Notifier = notifierService;
 
         private HubConnection? _hubConnection;
-
-        public event Func<string, string, object?, Task>? ListenAsync;
-        public Action<string, string, object?>? Listen;
 
         public async Task CreateConnection()
         {
             string hubEndPoint = EndPoint + "/chathub";
-            Console.WriteLine("hubEndPoint =>" + hubEndPoint);
-
             _hubConnection = new HubConnectionBuilder()
                 .WithUrl(hubEndPoint)
                 .WithAutomaticReconnect(new RetryPolicy())
@@ -37,11 +33,7 @@ namespace GlobalShared.Services.MicroServices
         {
             _hubConnection?.On<string, string>("ReceiveMessage", async (user, message) =>
             {
-                if (ListenAsync is not null)
-                {
-                    await ListenAsync.Invoke(NotifierObjectName.SignalR, "", new { user, message });
-                }
-                Listen?.Invoke(NotifierObjectName.SignalR, "", new { user, message });
+                await Notifier.Update(NotifierObjectName.SignalR, "", new { user, message });
             });
         }
         private async Task OnStartHubConnection()
