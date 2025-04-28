@@ -4,14 +4,24 @@
 
 <div id="mainbody" class="main-body">
     <div id="viewbody" class="view-body">
+
+        <button @onclick="OnTestModalOpen" type="button" class="btn btn-primary"></button>
+
+        <PopupModal @ref="testModal" Title="Test" Modalstyle="@ModalStyle.Small" ModalHeaderFooter="(true,true)">
+            <ModalContent>
+                Hello world
+            </ModalContent>
+        </PopupModal>
     </div>
 </div>
 
 
 @code {
+    private PopupModal? testModal;
+
     protected override void OnInitialized()
     {
-       
+        R.Notifier.ListenAsync += ReceivedEmit;
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -22,13 +32,23 @@
         }
     }
 
-    private void ReceivedEmit(string on, string an, object? data)
+    private async Task ReceivedEmit(string on, string an, object? data)
     {
-        
+        if(on == NotifierObjectName.SignalR)
+        {
+            R.ComFn.JSConsole("***********Getting SignalR********");
+            R.ComFn.JSConsole("data", data);
+            await R.JSRuntime.InvokeVoidAsync("alert", "***********Getting SignalR********");
+        }
+    }
+
+    private void OnTestModalOpen(){
+        //testModal?.Open();
+        R.SignalR.Send();
     }
 
     public void Dispose()
     {
-        
+        R.Notifier.ListenAsync -= ReceivedEmit;
     }
 }

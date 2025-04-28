@@ -1,14 +1,22 @@
 ﻿.pu-modal-container {
-
+    opacity: 0;
+    position: relative;
+    z-index: 1000;
+    transition: all 0.3s;
 }
+    .pu-modal-container.pumc-active {
+        opacity: 1;
+        transition: all 0.3s;
+    }
+
 .pu-modal-dialog {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
-    background: #000000ba;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,10 +31,11 @@
 .pu-dialog-full {
     height : 100%;
     width : 100%;
+    border-radius : 0px !important;
 }
 
 .pu-dialog-medium {
-    width: 65%;
+    width: 800px;
     height: 75%;
 }
 
@@ -43,15 +52,22 @@
 .pu-modal-header {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 10px 10px 0px 0px;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
     border-top-left-radius : 10px;
     border-top-right-radius : 10px;
+    min-height : 62px;
+    border-bottom : 1px solid #eee;
 }
 
 .pu-modal-head-crossbtn {
     border-radius: 10px !important;
-    border: 1px solid #dbdada !important;
+   /* border: 1px solid #dbdada !important;*/
+}
+
+.pu-modal-head-title {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .pu-modal-footer {
@@ -59,27 +75,30 @@
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 0px 10px 10px 0px;
-    border-bottom-left-radius : 10px;
-    border-bottom-right-radius : 10px;
+    justify-content: space-between; 
+    padding: 10px 10px 10px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 62px;
+    border-top: 1px solid #eee;
 }
 
 .pu-modal-body {
     height: calc(100% - 0px);
     overflow: auto;
+    padding : 10px;
 }
 
 .pmb-hf {
-    height: calc(100% - 87px) !important;
+    height: calc(100% - 124px) !important;
 }
 
 .pmb-h {
-    height: calc(100% - 41px) !important;
+    height: calc(100% - 62px) !important;
 }
 
 .pmb-f {
-    height: calc(100% - 46px) !important;
+    height: calc(100% - 62px) !important;
 }
 
 @media(max-width : 768px) {

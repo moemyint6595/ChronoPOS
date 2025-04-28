@@ -42,7 +42,6 @@ namespace GlobalShared.Services.MicroServices
             {
                 await _hubConnection.StartAsync();
             }
-              
         }
         public bool IsConnected => _hubConnection?.State == HubConnectionState.Connected;
 

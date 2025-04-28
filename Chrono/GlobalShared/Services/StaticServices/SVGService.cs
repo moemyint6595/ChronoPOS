@@ -295,6 +295,36 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+        public static RenderFragment NavIndicatorIcon(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
+                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                        <g id=""SVGRepo_iconCarrier""> <path d=""M4 12H20M20 12L16 8M20 12L16 16"" stroke=""currentcolor"" stroke-width=""2"" stroke-linecap=""round"" stroke-linejoin=""round""/> </g>
+                    </svg>
+                ", w, h));
+            };
+        }
+
+        public static RenderFragment NavIndicatorIcon2(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 64 64"" fill=""none"" stroke=""currentcolor"">
+                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                        <g id=""SVGRepo_iconCarrier"">
+                        <polyline points=""44 40 52 32 44 24""/>
+                        <line x1=""52"" y1=""32"" x2=""12"" y2=""32""/>
+                        </g>
+                    </svg>
+                ", w, h));
+            };
+        }
         #endregion
 
         #region MainHeader

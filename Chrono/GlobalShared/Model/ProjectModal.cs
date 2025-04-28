@@ -10,17 +10,16 @@ namespace GlobalShared.Model
 {
     public class NavMenuItem
     {
-        public string MainMenu { get; set; } = string.Empty;
-
+        public int MenuId { get; set; }
+        public SubMenuItem MainMenu { get; set; } = new();
         public List<SubMenuItem> SubMenu { get; set; } = [];
     }
 
     public class SubMenuItem
     {
         public string Name { get; set; } = string.Empty;
-
         public string Route { get; set; } = string.Empty;
-
+        public bool LastMenu { get; set; }
         public RenderFragment Icon { get; set; } = SVGService.NavDefaultIcon(20, 20);
     }
 
