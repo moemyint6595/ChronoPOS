@@ -67,6 +67,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ShopOwnerApp\ShopOwnerApp.csproj" />
     <ProjectReference Include="..\Chrono.Shared\Chrono.Shared.csproj" />
   </ItemGroup>
 

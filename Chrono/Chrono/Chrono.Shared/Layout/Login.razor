@@ -1,0 +1,18 @@
+﻿@page "/"
+@layout MainLayout
+
+<div>GGGGGG</div>
+
+@code {
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            R.ComFn.JSConsole("FIRE Index");
+            await Task.Delay(3000);
+            R.Nav.NavigateTo("/owner");
+        }
+    }
+
+}

@@ -1,6 +1,7 @@
 ﻿using Chrono.Services;
 using Chrono.Shared.Services;
 using GlobalShared.Services;
+using Microsoft.AspNetCore.Components.WebAssembly.Services;
 using Microsoft.Extensions.Logging;
 
 namespace Chrono
@@ -19,6 +20,7 @@ namespace Chrono
 
             // Add device-specific services used by the Chrono.Shared project
             builder.Services.AddSingleton<IFormFactor, FormFactor>();
+            builder.Services.AddScoped<LazyAssemblyLoader>();
             builder.Services.AddScoped<RootService>();
 
             builder.Services.AddMauiBlazorWebView();

@@ -1,26 +1,2 @@
 ﻿@inherits LayoutComponentBase
-
-<div id="main-page" class="page">
-    <main class="ml-0">
-        @Body
-    </main>
-</div>
-
-@code{
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            try
-            {
-                await R.JSRuntime.InvokeVoidAsync("CommonJSFunctions.SetMainPageHeight");
-                await InvokeAsync(StateHasChanged);
-                R.Nav.NavigateTo("/owner");
-            }
-            catch (Exception ex)
-            {
-                R.ComFn.JSConsole("Exception", ex);
-            }
-        }
-    }
-}
+@Body
