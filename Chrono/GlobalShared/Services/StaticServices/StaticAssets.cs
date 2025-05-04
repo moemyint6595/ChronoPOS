@@ -24,12 +24,6 @@ namespace GlobalShared.Services.StaticServices
         public const string Printers = "Printers";
     }
 
-    public readonly struct MainMenuSection
-    {
-        public const string Ordering = "Ordering";
-        public const string Setup = "Setup";
-    }
-
     public readonly struct AppType
     {
         public const string Owner = "owner";
@@ -61,5 +55,12 @@ namespace GlobalShared.Services.StaticServices
         public const string Small = "pu-dialog-small";
 
         public const string Auto = "pu-dialog-auto";
+    }
+
+    public readonly struct Themes
+    {
+        public const string Main = "MainTheme";
+
+        public const string Dark = "MainTheme";
     }
 }

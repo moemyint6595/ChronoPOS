@@ -2,7 +2,14 @@ using Chrono.Shared.Services;
 using Chrono.Web.Components;
 using Chrono.Web.Services;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+{
+    ContentRootPath = AppContext.BaseDirectory,
+    WebRootPath = Path.Combine(AppContext.BaseDirectory, "wwwroot"),
+    Args = args
+});
+
+//builder.WebHost.UseUrls("http://0.0.0.0:5001");
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

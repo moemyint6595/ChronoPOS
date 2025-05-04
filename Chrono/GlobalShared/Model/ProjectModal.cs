@@ -20,6 +20,8 @@ namespace GlobalShared.Model
         public string Name { get; set; } = string.Empty;
         public string Route { get; set; } = string.Empty;
         public bool LastMenu { get; set; }
+
+        public bool HasSubmenu { get; set; }
         public RenderFragment Icon { get; set; } = SVGService.NavDefaultIcon(20, 20);
     }
 

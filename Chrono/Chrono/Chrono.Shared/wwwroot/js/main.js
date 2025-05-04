@@ -1,6 +1,10 @@
 ﻿
 window.CommonJSFunctions = {
 
+    GetAppOrigin: () => {
+        return window.location.origin;
+    },
+
     GetIsNetworkAvailable: function () {
         return window.navigator.onLine;
     },

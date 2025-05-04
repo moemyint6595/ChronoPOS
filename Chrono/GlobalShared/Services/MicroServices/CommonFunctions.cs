@@ -33,6 +33,17 @@ namespace GlobalShared.Services.MicroServices
         {
             await JSRuntime.InvokeVoidAsync("CommonJSFunctions.NavMenuExpendToggle");
         }
+
+        public async Task GetOrigin()
+        {
+           string origin = await JSRuntime.InvokeAsync<string>("CommonJSFunctions.GetAppOrigin");
+           JSConsole("origin", origin);
+        }
+
+        public void SetTheme(string theme)
+        {
+            JSRuntime.InvokeVoidAsync("RootJsFunctions.ChangeTheme", theme);
+        }
     }
 
     public class APIFunctions(APIContext _d, GlobalVariables _gva)
