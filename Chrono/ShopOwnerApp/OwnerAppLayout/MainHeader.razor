@@ -20,7 +20,7 @@
         R.Notifier.Listen += ReceivedEmit;
     }
 
-    private void ReceivedEmit(string on, string an, object? data)
+    private async void ReceivedEmit(string on, string an, object? data)
     {
         if (on == NotifierObjectName.MainHeader && an == NotifierActionName.MainHeaderNameChange)
         {

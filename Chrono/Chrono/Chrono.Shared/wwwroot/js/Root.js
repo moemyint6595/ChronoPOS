@@ -59,8 +59,8 @@ window.RootJsFunctions = {
 
         //NavMenu
         this.setElementStyle(myVariable.NavMenuBackground, "#FAFAFA");
-        this.setElementStyle(myVariable.NavSelectBackground, "#e7efff");
-        this.setElementStyle(myVariable.NavTextColor, "#000000");
+        this.setElementStyle(myVariable.NavSelectBackground, "#7bc7f7");
+        this.setElementStyle(myVariable.NavTextColor, "#716b6b");
         this.setElementStyle(myVariable.NavIndicationColor, "#a2d0eded");
 
 

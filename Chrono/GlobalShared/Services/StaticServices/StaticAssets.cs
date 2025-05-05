@@ -9,7 +9,7 @@ namespace GlobalShared.Services.StaticServices
     public readonly struct MenuSection
     {
         public const string Order = "Orders";
-        public const string Main = "Table View";
+        public const string TableView = "Table View";
 
 
         //Setup
