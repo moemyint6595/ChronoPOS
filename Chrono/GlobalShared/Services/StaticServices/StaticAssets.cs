@@ -9,7 +9,7 @@ namespace GlobalShared.Services.StaticServices
     public readonly struct MenuSection
     {
         public const string Order = "Orders";
-        public const string TableView = "Table View";
+        public const string Main = "Table View";
 
 
         //Setup
@@ -23,7 +23,6 @@ namespace GlobalShared.Services.StaticServices
         public const string Permission = "Permission";
         public const string Printers = "Printers";
     }
-
     public readonly struct AppType
     {
         public const string Owner = "owner";
@@ -61,6 +60,13 @@ namespace GlobalShared.Services.StaticServices
     {
         public const string Main = "MainTheme";
 
-        public const string Dark = "MainTheme";
+        public const string Dark = "DarkTheme";
+    }
+
+    public readonly struct LanguageType
+    {
+        public const string EN = "en";
+
+        public const string MM = "mm";
     }
 }

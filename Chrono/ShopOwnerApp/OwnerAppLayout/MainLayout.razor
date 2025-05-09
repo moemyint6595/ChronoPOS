@@ -24,6 +24,8 @@
         {
             try
             {
+                R.Lang.SetLanguage(LanguageType.MM);
+                R.ComFn.SetTheme(Themes.Dark);
                 R.ComFn.JSConsole("FIRE MAINL 1");
                 await R.JSRuntime.InvokeVoidAsync("CommonJSFunctions.SetMainPageHeight");
                 //await R.ComFn.APIFuns.GetAllData();

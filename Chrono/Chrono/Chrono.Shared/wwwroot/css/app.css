@@ -4,14 +4,16 @@
     --content-bg-color: #d1d1d1;
     --core-color: #2bacfd;
     --core-color-dark: #1a8fd8;
-    --core-light-color: #d4e9ff;
+    --core-light-color: #ecf4fc;
     --core-second-color: #201d2b;
     --text-color: #000000;
     --core-text-color: #000000;
     --icon-color: #000000;
+    --border-color: #e7e7e7;
     /*NavMenu*/
     --nav-bg-color: #FAFAFA;
     --nav-selbg-color: #7bc7f7;
+    --nav-selbg2-color: #99d0f1;
     --nav-text-color: #716b6b;
     --nav-ind-color: #a2d0eded;
     /*UtilitiesColor*/
@@ -28,7 +30,7 @@
 
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('../fonts/Sansation-Regular.ttf') format('truetype');
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -99,14 +101,15 @@ main {
 
 .main-header {
     width: 100%;
-    min-height: 45px;
-    background: #FFFFFF;
+    min-height: 70px;
+    background: var(--nav-bg-color);
     display: flex;
     justify-content: space-between;
-    padding-left : var(--sidebar-collapsed-width);
-    align-items : center;
-    color : var(--mh-text-color);
-    border-bottom: 1px solid #e7e7e7;
+    padding-left: var(--sidebar-collapsed-width);
+    align-items: center;
+    color: var(--mh-text-color);
+    /*border-bottom: 1px solid var(--border-color);*/
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
     .main-header .mh-first-div {

@@ -15,6 +15,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment PlusIcon(int w, int h)
         {
             return (builder) =>
@@ -28,6 +29,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment HeartUnfill(int w, int h)
         {
             return (builder) =>
@@ -67,6 +69,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment EditIcon(int w, int h)
         {
             return (builder) =>
@@ -85,6 +88,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment VisibleIcon(int w, int h)
         {
             return (builder) =>
@@ -94,6 +98,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment InVisibleIcon(int w, int h)
         {
             return (builder) =>
@@ -103,6 +108,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment WarningIcon(int w, int h)
         {
             return (builder) =>
@@ -115,6 +121,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment RecentIcon(int w, int h)
         {
             return (builder) =>
@@ -124,6 +131,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment TrashIcon(int w, int h)
         {
             return (builder) =>
@@ -133,6 +141,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         public static RenderFragment PhoneIcon(int w, int h)
         {
             return (builder) =>
@@ -143,35 +152,50 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
-        public static RenderFragment CheckBoxIcon(int w, int h)
-        {
-            return (builder) =>
-            {
-                builder.AddMarkupContent(0, string.Format(@"
-       	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
-                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
-                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
-                        <g id=""SVGRepo_iconCarrier""> <path fill-rule=""evenodd"" clip-rule=""evenodd"" d=""M12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"" fill=""currentcolor""/> </g>
-                     </svg>
-                ", w, h));
-            };
-        }
-        public static RenderFragment UnCheckBoxIcon(int w, int h)
-        {
-            return (builder) =>
-            {
-                builder.AddMarkupContent(0, string.Format(@"
-       	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
-                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
-                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
-                        <g id=""SVGRepo_iconCarrier""> <path d=""M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"" stroke=""currentcolor"" stroke-width=""1.5""/>  </g>
-                    </svg>
-                ", w, h));
-            };
-        }
         #endregion
 
         #region Navmenu
+
+        public static RenderFragment AppIcon(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	             <svg version=""1.1"" id=""Icons"" viewBox=""0 0 32 32"" xml:space=""preserve"" width=""{0}"" height=""{1}"" fill=""currentcolor"">
+                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                        <g xmlns="""" id=""SVGRepo_iconCarrier""><g <path d=""M16,1c-2.3,0-4.7,4.5-5,11h10C20.7,5.5,18.3,1,16,1z""/> <path d=""M23,12h6c-0.4-5.7-4.5-10.3-9.9-11.6C21.3,2.5,22.8,6.8,23,12z""/> <path d=""M9,12c0.2-5.2,1.7-9.5,3.9-11.6C7.6,1.7,3.5,6.3,3.1,12H9z""/> </g> <path d=""M29.9,16.5C29.7,16.2,29.4,16,29,16c-2.2,0-4.3,1-5.6,2.8L22.5,20c-1.1,1.3-2.8,2-4.5,2h-3c-0.6,0-1-0.4-1-1s0.4-1,1-1h1.9 c1.6,0,3.1-1.3,3.1-2.9c0,0,0-0.1,0-0.1c0-0.5-0.5-1-1-1l-6.1,0c-3.6,0-6.5,1.6-8.1,4.2l-2.7,4.2c-0.2,0.3-0.2,0.7,0,1l3,5 c0.1,0.2,0.4,0.4,0.6,0.5c0.1,0,0.1,0,0.2,0c0.2,0,0.4-0.1,0.6-0.2c3.8-2.5,8.2-3.8,12.7-3.8c3.3,0,6.3-1.8,7.9-4.7l2.7-4.8 C30,17.2,30,16.8,29.9,16.5z""/> <path  d=""M28.9,14C28.9,14,28.9,14,28.9,14l-6,0c0,0.9-0.1,1.7-0.2,2.5C24.4,14.9,26.6,14,28.9,14z""/> <path  d=""M9.1,14.6c0-0.2,0-0.4,0-0.6h-6c0.1,1.4,0.4,2.7,0.9,4C5.3,16.4,7.1,15.2,9.1,14.6z""/> </g>
+                      </svg>
+                ", w, h));
+            };
+        }
+        public static RenderFragment NavManuIcons(int w, int h, string type)
+        {
+            return type switch
+            {
+                MenuSection.Order => OrderIcon(w, h),
+                MenuSection.Items => ItemsIcon(w, h),
+                MenuSection.Main => MainIcon(w, h),
+                _ => NavDefaultIcon(w, h)
+            };
+        }
+
+        public static RenderFragment SettingIcon(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	             <svg width=""{0}"" height=""{1}"" viewBox=""0 0 1024 1024"" fill=""currentcolor"">
+                      <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                        <g id=""SVGRepo_iconCarrier"">
+                        <path fill=""currencolor"" d=""M600.704 64a32 32 0 0 1 30.464 22.208l35.2 109.376c14.784 7.232 28.928 15.36 42.432 24.512l112.384-24.192a32 32 0 0 1 34.432 15.36L944.32 364.8a32 32 0 0 1-4.032 37.504l-77.12 85.12a357.12 357.12 0 0 1 0 49.024l77.12 85.248a32 32 0 0 1 4.032 37.504l-88.704 153.6a32 32 0 0 1-34.432 15.296L708.8 803.904c-13.44 9.088-27.648 17.28-42.368 24.512l-35.264 109.376A32 32 0 0 1 600.704 960H423.296a32 32 0 0 1-30.464-22.208L357.696 828.48a351.616 351.616 0 0 1-42.56-24.64l-112.32 24.256a32 32 0 0 1-34.432-15.36L79.68 659.2a32 32 0 0 1 4.032-37.504l77.12-85.248a357.12 357.12 0 0 1 0-48.896l-77.12-85.248A32 32 0 0 1 79.68 364.8l88.704-153.6a32 32 0 0 1 34.432-15.296l112.32 24.256c13.568-9.152 27.776-17.408 42.56-24.64l35.2-109.312A32 32 0 0 1 423.232 64H600.64zm-23.424 64H446.72l-36.352 113.088-24.512 11.968a294.113 294.113 0 0 0-34.816 20.096l-22.656 15.36-116.224-25.088-65.28 113.152 79.68 88.192-1.92 27.136a293.12 293.12 0 0 0 0 40.192l1.92 27.136-79.808 88.192 65.344 113.152 116.224-25.024 22.656 15.296a294.113 294.113 0 0 0 34.816 20.096l24.512 11.968L446.72 896h130.688l36.48-113.152 24.448-11.904a288.282 288.282 0 0 0 34.752-20.096l22.592-15.296 116.288 25.024 65.28-113.152-79.744-88.192 1.92-27.136a293.12 293.12 0 0 0 0-40.256l-1.92-27.136 79.808-88.128-65.344-113.152-116.288 24.96-22.592-15.232a287.616 287.616 0 0 0-34.752-20.096l-24.448-11.904L577.344 128zM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384zm0 64a128 128 0 1 0 0 256 128 128 0 0 0 0-256z""/>
+                        </g>
+                      </svg>
+                ", w, h));
+            };
+        }
+
         public static RenderFragment MainIcon(int w, int h)
         {
             return (builder) =>
@@ -180,11 +204,26 @@ namespace GlobalShared.Services.StaticServices
        	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
                         <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
                         <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
-                        <g xmlns="""" id=""SVGRepo_iconCarrier""> <path d=""M2 12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274C22 8.77128 22 9.91549 22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039Z"" stroke=""currentcolor"" stroke-width=""1.5""/> <path d=""M15 18H9"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-linecap=""round""/> </g>
+                        <g id=""SVGRepo_iconCarrier""> <path d=""M20.2083 7.82141L12.5083 12.2814C12.1983 12.4614 11.8083 12.4614 11.4883 12.2814L3.78826 7.82141C3.23826 7.50141 3.09826 6.75141 3.51826 6.28141C3.80826 5.95141 4.13826 5.68141 4.48826 5.49141L9.90826 2.49141C11.0683 1.84141 12.9483 1.84141 14.1083 2.49141L19.5283 5.49141C19.8783 5.68141 20.2083 5.96141 20.4983 6.28141C20.8983 6.75141 20.7583 7.50141 20.2083 7.82141Z"" fill=""currentcolor""/> <path d=""M11.4305 14.1389V20.9589C11.4305 21.7189 10.6605 22.2189 9.98047 21.8889C7.92047 20.8789 4.45047 18.9889 4.45047 18.9889C3.23047 18.2989 2.23047 16.5589 2.23047 15.1289V9.9689C2.23047 9.1789 3.06047 8.6789 3.74047 9.0689L10.9305 13.2389C11.2305 13.4289 11.4305 13.7689 11.4305 14.1389Z"" fill=""currentcolor""/> <path d=""M12.5703 14.1389V20.9589C12.5703 21.7189 13.3403 22.2189 14.0203 21.8889C16.0803 20.8789 19.5503 18.9889 19.5503 18.9889C20.7703 18.2989 21.7703 16.5589 21.7703 15.1289V9.9689C21.7703 9.1789 20.9403 8.6789 20.2603 9.0689L13.0703 13.2389C12.7703 13.4289 12.5703 13.7689 12.5703 14.1389Z"" fill=""currentcolor""/> </g>
+                     </svg>
+                ", w, h));
+            };
+        }
+
+        public static RenderFragment SetupIcon(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	           <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
+                    <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                    <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                    <g id=""SVGRepo_iconCarrier""> <path d=""M15.1636 3C13.7409 3 12.5495 3.99037 12.2412 5.31931L3.81819 5.31931C3.36632 5.31931 3.00001 5.68562 3.00001 6.13749C3.00001 6.58936 3.36632 6.95567 3.81819 6.95567L12.3191 6.95567C12.7181 8.14396 13.8409 9 15.1636 9C16.4864 9 17.6091 8.14396 18.0082 6.95567H20.1818C20.6337 6.95567 21 6.58936 21 6.13749C21 5.68562 20.6337 5.31931 20.1818 5.31931H18.0861C17.7778 3.99037 16.5864 3 15.1636 3Z"" fill=""currentcolor""/> <path d=""M7.52727 9C6.14741 9 4.98512 9.9316 4.63508 11.2002L3.79675 11.2221C3.34503 11.234 2.98845 11.6098 3.00029 12.0615C3.01213 12.5132 3.38791 12.8698 3.83963 12.8579L4.64554 12.8368C5.00778 14.0865 6.16084 15 7.52727 15C8.88587 15 10.0335 14.0969 10.4027 12.8583H20.1818C20.6337 12.8583 21 12.492 21 12.0401C21 11.5882 20.6337 11.2219 20.1818 11.2219H10.4254C10.0827 9.94227 8.91502 9 7.52727 9Z"" fill=""currentcolor""/> <path d=""M15.1636 15C13.8114 15 12.6681 15.8947 12.2934 17.1244H3.81819C3.36632 17.1244 3.00001 17.4907 3.00001 17.9426C3.00001 18.3944 3.36632 18.7608 3.81819 18.7608H12.2609C12.5977 20.0492 13.7696 21 15.1636 21C16.5576 21 17.7296 20.0492 18.0663 18.7608H20.1818C20.6337 18.7608 21 18.3944 21 17.9426C21 17.4907 20.6337 17.1244 20.1818 17.1244H18.0338C17.6592 15.8947 16.5159 15 15.1636 15Z"" fill=""currentcolor""/> </g>
                     </svg>
                 ", w, h));
             };
         }
+
         public static RenderFragment OrderIcon(int w, int h)
         {
             return (builder) =>
@@ -193,11 +232,56 @@ namespace GlobalShared.Services.StaticServices
        	             <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
                         <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
                         <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
-                        <g id=""SVGRepo_iconCarrier""> <path d=""M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z"" stroke=""currentcolor"" stroke-width=""1.5""/> <path d=""M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z"" stroke=""currentcolor"" stroke-width=""1.5""/> <path d=""M11 10.8L12.1429 12L15 9"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-linecap=""round"" stroke-linejoin=""round""/> <path d=""M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7"" stroke=""currentcolor"" stroke-width=""1.5"" stroke-linecap=""round""/> </g>
-                      </svg>
+                        <g id=""SVGRepo_iconCarrier""> <path d=""M16 4.25C16 5.49 14.99 6.5 13.75 6.5H10.25C9.63 6.5 9.07 6.25 8.66 5.84C8.25 5.43 8 4.87 8 4.25C8 3.01 9.01 2 10.25 2H13.75C14.37 2 14.93 2.25 15.34 2.66C15.75 3.07 16 3.63 16 4.25Z"" fill=""currentcolor""/> <path d=""M18.83 5.02874C18.6 4.83874 18.34 4.68874 18.06 4.57874C17.77 4.46874 17.48 4.69874 17.42 4.99874C17.08 6.70874 15.57 7.99874 13.75 7.99874H10.25C9.25 7.99874 8.31 7.60874 7.6 6.89874C7.08 6.37874 6.72 5.71874 6.58 5.00874C6.52 4.70874 6.22 4.46874 5.93 4.58874C4.77 5.05874 4 6.11874 4 8.24874V17.9987C4 20.9987 5.79 21.9987 8 21.9987H16C18.21 21.9987 20 20.9987 20 17.9987V8.24874C20 6.61874 19.55 5.61874 18.83 5.02874ZM8 12.2487H12C12.41 12.2487 12.75 12.5887 12.75 12.9987C12.75 13.4087 12.41 13.7487 12 13.7487H8C7.59 13.7487 7.25 13.4087 7.25 12.9987C7.25 12.5887 7.59 12.2487 8 12.2487ZM16 17.7487H8C7.59 17.7487 7.25 17.4087 7.25 16.9987C7.25 16.5887 7.59 16.2487 8 16.2487H16C16.41 16.2487 16.75 16.5887 16.75 16.9987C16.75 17.4087 16.41 17.7487 16 17.7487Z"" fill=""currentcolor""/> </g>
+                        </svg>
                 ", w, h));
             };
         }
+
+        public static RenderFragment ItemsIcon(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	            <svg fill=""currentcolor"" height=""{0}"" width=""{1}"" version=""1.1"" id=""Capa_1""  viewBox=""0 0 489.147 489.147"" xml:space=""preserve""><g id=""SVGRepo_bgCarrier"" stroke-width=""0""></g><g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""></g><g id=""SVGRepo_iconCarrier""> <g> <g> <g> <path d=""M181.474,441.747c68.4,0,124.3-56.7,127.4-127.8h-254.8C57.174,385.047,113.074,441.747,181.474,441.747z M248.674,342.347h3.5c5.4,0,9.7,4.3,9.7,9.7c0,5.4-4.3,9.7-9.7,9.7h-3.5c-5.4,0-9.7-4.3-9.7-9.7 S243.174,342.347,248.674,342.347z M224.174,376.147h3.5c5.4,0,9.7,4.3,9.7,9.7c0,5.4-4.3,9.7-9.7,9.7h-3.5 c-5.4,0-9.7-4.3-9.7-9.7C214.474,380.347,218.774,376.147,224.174,376.147z M195.474,411.847c-1.2,4.3-5.8,8.4-13.6,6.6 c-5.4,0.8-10.1-2.7-11.3-7.8c-0.8-5.4,2.7-10.1,7.8-11.3c3.5-0.8,7-0.4,10.5,0.8 C194.274,401.347,196.974,406.847,195.474,411.847z M165.874,346.947c1.6-5,7.4-7.8,12.4-5.8l1.6,0.4c5,1.6,7.8,7.4,6.2,12.4 c-0.7,4.1-7.7,8.8-14.4,5.4C167.074,357.447,164.374,352.047,165.874,346.947z M128.274,376.147c5.8-0.4,11.7,3.1,14.4,8.5 c2.3,4.7,0.4,10.5-4.7,12.8c-4.8,2.1-9.7-0.4-11.7-2.7c-4.3-0.8-7.4-4.7-7.4-8.9 C118.574,380.747,122.774,376.147,128.274,376.147z M88.274,360.147c-3.5-1.9-5.8-6.2-4.7-10.5c1.2-5,6.2-8.5,11.7-7.4 c5,1.2,8.9,4.7,10.5,9.7s-1.2,10.5-6.2,12C93.874,365.747,90.174,362.947,88.274,360.147z""></path> <path d=""M356.674,314.347h-28c-3.1,81.6-68,147.2-146.8,147.2c-79.3,0-143.7-65.2-146.8-147.2h-28.4 c0,96.7,78.5,174.8,174.8,174.8S356.674,410.647,356.674,314.347z""></path> <path d=""M461.474,108.547h-47.8l6.2-56.3l53.7-34.6c4.7-2.7,5.8-8.9,2.7-13.2c-2.7-4.7-8.9-5.8-13.2-2.7l-57.1,36.8 c-2.3,1.6-3.9,4.3-4.3,7l-6.6,61.8c0,0.4,0,0.8,0,1.2h-189.5l-20.2,45.4h297.1L461.474,108.547z""></path> <path d=""M212.874,294.947h162.7v19.4c0,76.9-45.1,143.3-109.9,174.8h166.6l35-315.8h-268L212.874,294.947z""></path> </g> </g> </g> </g>
+                    </svg>
+                ", w, h));
+            };
+        }
+
+        public static RenderFragment PrinterIcon(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 64 64"" aria-hidden=""true"" role=""img"" class=""iconify iconify--emojione-monotone"" preserveAspectRatio=""xMidYMid meet"" fill=""currentcolor"">
+                                    <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                                    <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                                    <g id=""SVGRepo_iconCarrier"">
+                                    <path d=""M19.897 51.322c-.95 2.449-2.418 4.771-3.829 7.012c-.313.498.525.947.837.449c1.454-2.309 2.947-4.699 3.927-7.225c.212-.54-.726-.771-.935-.236"" fill=""currentcolor""/>
+                                    <path d=""M44.103 51.322c-.209-.535-1.146-.305-.936.236c.98 2.525 2.473 4.916 3.928 7.225c.312.498 1.15.049.836-.449c-1.41-2.24-2.879-4.563-3.828-7.012"" fill=""currentcolor""/>
+                                    <path d=""M52 16h-5V4c0-1.1-.899-2-2-2H19c-1.1 0-2 .9-2 2v12h-5C8.319 16 2 21.088 2 26.805S4.24 54 4.24 54H7v4c0 1.1.9 2 2 2h2.022c-.205 1.697 1.759 2 4.111 2c1.272 0 2.656-.087 3.867-.087h26c1.211 0 2.595.087 3.867.087c2.353 0 4.315-.303 4.111-2H55c1.101 0 2-.9 2-2v-4h2.76S62 32.521 62 26.805S55.681 16 52 16m-33 0V5c0-.549.45-1 1-1h24c.55 0 1 .451 1 1v15h-1V10H20v10h-1v-4m23-4v8H22v-8h20M8.696 52h-2.65C5.512 46.732 4 31.397 4 26.805c0-4.152 4.348-7.916 7.102-8.662C8.912 20.156 7 23.361 7 26.805C7 31.455 8.235 46.537 8.696 52M12 41.5c0-.186.065-.35.154-.5c.175.293.481.5.846.5h2a.99.99 0 0 0 .846-.5c.089.15.154.314.154.5c0 .551-.45 1-1 1h-2c-.55 0-1-.449-1-1m8-2.5h-7c-.55 0-1-.449-1-1v-4c0-.549.45-1 1-1h7c.55 0 1 .451 1 1v4c0 .551-.45 1-1 1m1 2.5c0 .551-.45 1-1 1h-2c-.55 0-1-.449-1-1c0-.186.065-.35.154-.5c.175.293.481.5.846.5h2a.99.99 0 0 0 .846-.5c.089.15.154.314.154.5M48.867 60c-.622 0-1.272-.021-1.915-.043c-.67-.022-1.333-.044-1.952-.044H19c-.619 0-1.282.021-1.953.044c-.642.022-1.292.043-1.914.043c-1.056 0-1.662-.072-2.002-.144c.106-.239.298-.597.645-1.093c2.539-3.637 3.982-6.49 4.688-8.061h3.299C21.368 52.386 20.554 54.991 19 57h5.24c-.153.481-.307.965-.464 1.441c-.182.551.754.783.935.236c.183-.555.36-1.117.537-1.678h6.267v1.559c0 .574.971.574.971 0v-1.559h6.267c.177.561.354 1.123.537 1.678c.181.547 1.116.314.935-.236c-.157-.477-.311-.96-.464-1.441H45c-1.554-2.009-2.368-4.614-2.762-6.297h3.3c.705 1.57 2.148 4.424 4.688 8.061c.346.496.537.854.645 1.093c-.343.071-.948.143-2.004.143m-27.198-4.5c.869-1.775 1.363-3.572 1.63-4.797h17.402c.267 1.225.761 3.021 1.63 4.797H21.669M50 39a1 1 0 1 1 0-2a1 1 0 0 1 0 2m0-4a1 1 0 1 1 0-2a1 1 0 0 1 0 2m-18-7c-21 0-21-.447-21-1s0-1 21-1s21 .447 21 1s0 1-21 1m25.954 24h-2.65C55.765 46.537 57 31.455 57 26.805c0-3.443-1.912-6.648-4.102-8.662c2.754.746 7.102 4.509 7.102 8.662c0 4.592-1.513 19.927-2.046 25.195"" fill=""currentcolor""/>
+                                    <path d=""M32 9a6.998 6.998 0 0 0 6.454-4.287a7.978 7.978 0 0 1-12.908 0A6.998 6.998 0 0 0 32 9z"" fill=""currentcolor""/>
+                                    </g>
+                               </svg>
+                ", w, h));
+            };
+        }
+
+        public static RenderFragment PermissionIcon(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	             <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
+                                <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                                <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                                <g id=""SVGRepo_iconCarrier""> <path fill-rule=""evenodd"" clip-rule=""evenodd"" d=""M6.75 8C6.75 5.10051 9.10051 2.75 12 2.75C14.4453 2.75 16.5018 4.42242 17.0846 6.68694C17.1879 7.08808 17.5968 7.32957 17.9979 7.22633C18.3991 7.12308 18.6405 6.7142 18.5373 6.31306C17.788 3.4019 15.1463 1.25 12 1.25C8.27208 1.25 5.25 4.27208 5.25 8V10.0546C4.13525 10.1379 3.40931 10.348 2.87868 10.8787C2 11.7574 2 13.1716 2 16C2 18.8284 2 20.2426 2.87868 21.1213C3.75736 22 5.17157 22 8 22H16C18.8284 22 20.2426 22 21.1213 21.1213C22 20.2426 22 18.8284 22 16C22 13.1716 22 11.7574 21.1213 10.8787C20.2426 10 18.8284 10 16 10H8C7.54849 10 7.13301 10 6.75 10.0036V8ZM8 17C8.55228 17 9 16.5523 9 16C9 15.4477 8.55228 15 8 15C7.44772 15 7 15.4477 7 16C7 16.5523 7.44772 17 8 17ZM12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17ZM17 16C17 16.5523 16.5523 17 16 17C15.4477 17 15 16.5523 15 16C15 15.4477 15.4477 15 16 15C16.5523 15 17 15.4477 17 16Z"" fill=""currentcolor""/> </g>
+                              </svg>
+                ", w, h));
+            };
+        }
+
         public static RenderFragment NavDefaultIcon(int w, int h)
         {
             return (builder) =>
@@ -211,15 +295,32 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
-        public static RenderFragment CheckIcon(int w, int h)
+        public static RenderFragment NavIndicatorIcon(int w, int h)
         {
             return (builder) =>
             {
                 builder.AddMarkupContent(0, string.Format(@"
-       	           <svg fill=""currentcolor"" width=""{0}"" height=""{1}"" viewBox=""-4 0 32 32"" version=""1.1"">
+       	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 24 24"" fill=""none"">
                         <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
                         <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
-                        <g id=""SVGRepo_iconCarrier""> <title>check</title> <path d=""M19.375 5.063l-9.5 13.625-6.563-4.875-3.313 4.594 11.188 8.531 12.813-18.375z""/> </g>
+                        <g id=""SVGRepo_iconCarrier""> <path d=""M4 12H20M20 12L16 8M20 12L16 16"" stroke=""currentcolor"" stroke-width=""2"" stroke-linecap=""round"" stroke-linejoin=""round""/> </g>
+                    </svg>
+                ", w, h));
+            };
+        }
+
+        public static RenderFragment NavIndicatorIcon2(int w, int h)
+        {
+            return (builder) =>
+            {
+                builder.AddMarkupContent(0, string.Format(@"
+       	            <svg width=""{0}"" height=""{1}"" viewBox=""0 0 64 64"" fill=""none"" stroke=""currentcolor"">
+                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
+                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+                        <g id=""SVGRepo_iconCarrier"">
+                        <polyline points=""44 40 52 32 44 24""/>
+                        <line x1=""52"" y1=""32"" x2=""12"" y2=""32""/>
+                        </g>
                     </svg>
                 ", w, h));
             };
@@ -242,19 +343,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
-        public static RenderFragment ProfileIcon(int w, int h)
-        {
-            return (builder) =>
-            {
-                builder.AddMarkupContent(0, string.Format(@"
-       	           <svg width=""{0}"" height=""{1}"" viewBox=""0 0 32 32"" version=""1.1"" fill=""currentcolor"">
-                        <g id=""SVGRepo_bgCarrier"" stroke-width=""0""/>
-                        <g id=""SVGRepo_tracerCarrier"" stroke-linecap=""round"" stroke-linejoin=""round""/>
-                        <g id=""SVGRepo_iconCarrier""> <g id=""icomoon-ignore""> </g> <path d=""M16 3.205c-7.067 0-12.795 5.728-12.795 12.795s5.728 12.795 12.795 12.795 12.795-5.728 12.795-12.795c0-7.067-5.728-12.795-12.795-12.795zM16 4.271c6.467 0 11.729 5.261 11.729 11.729 0 2.845-1.019 5.457-2.711 7.49-1.169-0.488-3.93-1.446-5.638-1.951-0.146-0.046-0.169-0.053-0.169-0.66 0-0.501 0.206-1.005 0.407-1.432 0.218-0.464 0.476-1.244 0.569-1.944 0.259-0.301 0.612-0.895 0.839-2.026 0.199-0.997 0.106-1.36-0.026-1.7-0.014-0.036-0.028-0.071-0.039-0.107-0.050-0.234 0.019-1.448 0.189-2.391 0.118-0.647-0.030-2.022-0.921-3.159-0.562-0.719-1.638-1.601-3.603-1.724l-1.078 0.001c-1.932 0.122-3.008 1.004-3.57 1.723-0.89 1.137-1.038 2.513-0.92 3.159 0.172 0.943 0.239 2.157 0.191 2.387-0.010 0.040-0.025 0.075-0.040 0.111-0.131 0.341-0.225 0.703-0.025 1.7 0.226 1.131 0.579 1.725 0.839 2.026 0.092 0.7 0.35 1.48 0.569 1.944 0.159 0.339 0.234 0.801 0.234 1.454 0 0.607-0.023 0.614-0.159 0.657-1.767 0.522-4.579 1.538-5.628 1.997-1.725-2.042-2.768-4.679-2.768-7.555 0-6.467 5.261-11.729 11.729-11.729zM7.811 24.386c1.201-0.49 3.594-1.344 5.167-1.808 0.914-0.288 0.914-1.058 0.914-1.677 0-0.513-0.035-1.269-0.335-1.908-0.206-0.438-0.442-1.189-0.494-1.776-0.011-0.137-0.076-0.265-0.18-0.355-0.151-0.132-0.458-0.616-0.654-1.593-0.155-0.773-0.089-0.942-0.026-1.106 0.027-0.070 0.053-0.139 0.074-0.216 0.128-0.468-0.015-2.005-0.17-2.858-0.068-0.371 0.018-1.424 0.711-2.311 0.622-0.795 1.563-1.238 2.764-1.315l1.011-0.001c1.233 0.078 2.174 0.521 2.797 1.316 0.694 0.887 0.778 1.94 0.71 2.312-0.154 0.852-0.298 2.39-0.17 2.857 0.022 0.078 0.047 0.147 0.074 0.217 0.064 0.163 0.129 0.333-0.025 1.106-0.196 0.977-0.504 1.461-0.655 1.593-0.103 0.091-0.168 0.218-0.18 0.355-0.051 0.588-0.286 1.338-0.492 1.776-0.236 0.502-0.508 1.171-0.508 1.886 0 0.619 0 1.389 0.924 1.68 1.505 0.445 3.91 1.271 5.18 1.77-2.121 2.1-5.035 3.4-8.248 3.4-3.183 0-6.073-1.277-8.188-3.342z"" fill=""currentcolor""> </path> </g>
-                    </svg>  
-                ", w, h));
-            };
-        }
+
         public static RenderFragment CalendarIcon(int w, int h)
         {
             return (builder) =>
@@ -268,6 +357,7 @@ namespace GlobalShared.Services.StaticServices
                 ", w, h));
             };
         }
+
         #endregion
     }
 }

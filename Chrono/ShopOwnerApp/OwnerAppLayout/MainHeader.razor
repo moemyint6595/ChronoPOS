@@ -1,13 +1,15 @@
 ﻿@implements IDisposable
 
 <div id="mainheader" class="main-header">
-    <div class="mh-first-div">@R.Gva.CurrentPage</div>
+    <div class="mh-first-div">@R.Lang[R.Gva.CurrentPage]</div>
     <div class="mh-second-div">
-        <button type="button" class="btn-none mh-left-btn">
+        @* <button type="button" class="btn-none mh-left-btn">
             <div>@SVGService.BellIcon(20, 20)</div>
-        </button>
+        </button> *@
         <button type="button" class="btn-none mh-left-btn">
-            <div>@SVGService.ProfileIcon(30, 30)</div>
+            <div>
+                <SettingIcon Height="30" Width="30" />
+            </div>
         </button>
     </div>
 </div>
@@ -20,7 +22,15 @@
         R.Notifier.Listen += ReceivedEmit;
     }
 
-    private async void ReceivedEmit(string on, string an, object? data)
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            StateHasChanged();
+        }
+    }
+
+    private void ReceivedEmit(string on, string an, object? data)
     {
         if (on == NotifierObjectName.MainHeader && an == NotifierActionName.MainHeaderNameChange)
         {

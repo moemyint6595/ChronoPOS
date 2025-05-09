@@ -15,7 +15,10 @@
                 }
 
                 <div class="pu-modal-body @BodyCalClass()">
-                    @ModalContent
+                    @if(ModalContent is not null)
+                    {
+                        @ModalContent
+                    }
                 </div>
                 
 
@@ -23,10 +26,16 @@
                 {
                     <div class="pu-modal-footer">
                         <div class="pu-mf-left">
-                            @ModalFooterLeft
+                            @if (ModalFooterLeft is not null)
+                            {
+                                @ModalFooterLeft
+                            }
                         </div>
                         <div class="pu-mf-right">
-                            @ModalFooterRight
+                            @if (ModalFooterRight is not null)
+                            {
+                                @ModalFooterRight
+                            }
                         </div>
                     </div>
                 }
@@ -42,13 +51,13 @@
 
     //Ultilies
     [Parameter]
-    public RenderFragment ModalContent { get; set; }
+    public RenderFragment? ModalContent { get; set; }
 
     [Parameter]
-    public RenderFragment ModalFooterLeft { get; set; }
+    public RenderFragment? ModalFooterLeft { get; set; }
 
     [Parameter]
-    public RenderFragment ModalFooterRight { get; set; }
+    public RenderFragment? ModalFooterRight { get; set; }
 
     [Parameter]
     public string Modalstyle { get; set; } = ModalStyle.Medium;

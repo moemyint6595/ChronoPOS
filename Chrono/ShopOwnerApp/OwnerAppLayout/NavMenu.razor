@@ -1,9 +1,10 @@
 ﻿<div id="sidebar" class="sidebar collapsed">
     <div class="sidebar-header">
+        <div class="logo">C</div>
         <div class="logo-text">Chrono</div>
         <button @onclick="R.ComFn.ExpendToggle" type="button" class="btn-none toggle-btn">
-            <MenuCollapIcon Class="menu-collap-svg" />
-            <MenuExpendIcon Class="menu-expend-svg" />
+            <MenuCollapIcon Width="30" Height="30" Class="menu-collap-svg" />
+            <MenuExpendIcon Width="30" Height="30" Class="menu-expend-svg" />
         </button>
     </div>
     <div class="sidebar-menu">
@@ -14,40 +15,40 @@
                 <div class="menu-icon">
                     @menuitem.MainMenu.Icon
                 </div>
-                <div class="menu-text">
-                    @menuitem.MainMenu.Name
-                    @if(menuitem.MainMenu.HasSubmenu)
-                    {
-                        <div class="mm-subm-indicator">
-                            <MenuExpendIcon Width="15" Height="15" />
-                        </div>
-                    }
-                </div>
+                <div class="menu-text">@menuitem.MainMenu.Name</div>
+                <div class="menu-act-indicator"></div>
             </button>
             @if (menuitem.SubMenu.Any())
             {
                 <div class="submenu-container @(active ? "sub-open":"")">
+                    <div class="sub-conopen-indicator"></div>
                     @foreach (var menu in menuitem.SubMenu)
                     {
                         <div class="sub-menu-item @(menu.LastMenu ? "smi-last":"")">
                             <button @onclick="()=>OnSelectSubMenu(menu)" type="button" class="btn-none smi-btn @(SelectedSubMenu == menu.Name ? "sub-active":"")">
                                 <div class="smib-text">
-                                    <div class="smib-t-ind">
-                                        <div class="smib-tind-svg">@SVGService.CheckIcon(20,20)</div>
+                                    <div class="smib-t-active-svg">
+                                        @menu.Icon
                                     </div>
                                     @menu.Name
                                 </div>
-                                <div class="smib-svg">@SVGService.CalendarIcon(22,22)</div>
+                                <div class="smib-svg">@menu.Icon</div>
                             </button>
+                            @*  <div class="smi-ind smi-ind1">
+                                <div class="smi-ind1-arrow">
+                                    @SVGService.NavIndicatorIcon2(25, 25)
+                                </div>
+                            </div>
+                            <div class="smi-ind smi-ind2"></div> *@
                         </div>
                     }
                 </div>
-            } 
+            }
         }
     </div>
 </div>
 
-@code{
+@code {
     private string SelectedSubMenu = string.Empty;
 
     private List<NavMenuItem> MenuList = new List<NavMenuItem>()
@@ -55,32 +56,23 @@
         new NavMenuItem()
         {
             MenuId = 1,
-            MainMenu = new SubMenuItem(){Name = MenuSection.Order, Route =  "/owner", Icon = new RenderFragment((b)=>{
-                b.OpenComponent<MenuOrderIcon>(1);
-                b.CloseComponent();
-            }) },
+            MainMenu = new SubMenuItem(){Name = MenuSection.Order, Route =  "/owner", Icon = SVGService.OrderIcon(25,25) },
         },
          new NavMenuItem()
         {
             MenuId = 2,
-            MainMenu = new SubMenuItem(){Name = MenuSection.TableView, Route =  "/owner/tableview", Icon = new RenderFragment((b)=>{
-                b.OpenComponent<MenuTableViewIcon>(1);
-                b.CloseComponent();
-            }) },
+            MainMenu = new SubMenuItem(){Name = MenuSection.Main, Route =  "/owner/home", Icon = SVGService.MainIcon(25,25) },
         },
          new NavMenuItem()
         {
             MenuId = 3,
-            MainMenu = new SubMenuItem(){Name = MenuSection.Setup, Route =  "", Icon =new RenderFragment((b)=>{
-                b.OpenComponent<MenuSetupIcon>(1);
-                b.CloseComponent();
-            }), HasSubmenu = true },
+            MainMenu = new SubMenuItem(){Name = MenuSection.Setup, Route =  "/owner/setup", Icon = SVGService.SetupIcon(25,25) },
             SubMenu = new List<SubMenuItem>()
             {
-               new SubMenuItem(){Name = MenuSection.Table, Route =  "/owner/table", },
-               new SubMenuItem(){Name = MenuSection.Items, Route =  "/owner/items", },
-               new SubMenuItem(){Name = MenuSection.Category, Route =  "/owner/category", },
-               new SubMenuItem(){Name = MenuSection.Discount, Route =  "/owner/discount", LastMenu = true },
+               new SubMenuItem(){Name = MenuSection.Table, Route =  "/owner/table", Icon = SVGService.OrderIcon(22,22) },
+               new SubMenuItem(){Name = MenuSection.Items, Route =  "/owner/items", Icon = SVGService.MainIcon(22,22) },
+               new SubMenuItem(){Name = MenuSection.Category, Route =  "/owner/category", Icon = SVGService.CalendarIcon(22,22) },
+               new SubMenuItem(){Name = MenuSection.Discount, Route =  "/owner/discount", Icon = SVGService.CalendarIcon(22,22), LastMenu = true },
             }
         },
     };
@@ -88,7 +80,6 @@
     private async Task OnSelectMenu(SubMenuItem menu)
     {
         R.Gva.CurrentPage = menu.Name;
-        if (menu.HasSubmenu) return;
         //R.Nav.NavigateTo(menu.Route);
         SelectedSubMenu = string.Empty;
         await R.Notifier.Update(NotifierObjectName.MainHeader, NotifierActionName.MainHeaderNameChange);
@@ -96,8 +87,10 @@
 
     private async Task OnSelectSubMenu(SubMenuItem menu)
     {
+        await Task.Delay(0);
         SelectedSubMenu = menu.Name;
         //R.Nav.NavigateTo(menu.Route);
+        //await R.Notifier.Update(NotifierObjectName.MainHeader, NotifierActionName.MainHeaderNameChange);
     }
 
 }
