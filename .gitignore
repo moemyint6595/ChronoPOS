@@ -1,0 +1,19 @@
+# Ignore build outputs
+**/bin/
+**/obj/
+
+# Ignore VS temp files
+.vs/
+*.user
+*.suo
+
+# Ignore Mac builds
+*.DS_Store
+
+# Ignore Rider/JetBrains IDE
+.idea/
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.pdb
